@@ -8,7 +8,7 @@
     "children":[],
     "name":"Default",
   },
-  "defaultScriptType":0,
+  "defaultScriptType":1,
   "Folders":[
     {"$GMFolder":"","%Name":"Animation Curves","folderPath":"folders/Animation Curves.yy","name":"Animation Curves","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Extensions","folderPath":"folders/Extensions.yy","name":"Extensions","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -34,14 +34,23 @@
   },
   "name":"creacher",
   "resources":[
+    {"id":{"name":"obj_creacher","path":"objects/obj_creacher/obj_creacher.yy",},},
+    {"id":{"name":"obj_girl","path":"objects/obj_girl/obj_girl.yy",},},
     {"id":{"name":"obj_shift","path":"objects/obj_shift/obj_shift.yy",},},
+    {"id":{"name":"Room1_shadow","path":"rooms/Room1_shadow/Room1_shadow.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"spr_creacher_trans","path":"sprites/spr_creacher_trans/spr_creacher_trans.yy",},},
+    {"id":{"name":"spr_creacher","path":"sprites/spr_creacher/spr_creacher.yy",},},
+    {"id":{"name":"spr_girl_trans","path":"sprites/spr_girl_trans/spr_girl_trans.yy",},},
+    {"id":{"name":"spr_girl","path":"sprites/spr_girl/spr_girl.yy",},},
     {"id":{"name":"spr_shift","path":"sprites/spr_shift/spr_shift.yy",},},
+    {"id":{"name":"Sprite4","path":"sprites/Sprite4/Sprite4.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"Room1_shadow","path":"rooms/Room1_shadow/Room1_shadow.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
