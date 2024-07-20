@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"stone_sliding",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":15.46449,
+  "name":"stone_sliding",
+  "parent":{
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"stone_sliding.mp3",
+  "type":0,
+  "volume":1.0,
+}

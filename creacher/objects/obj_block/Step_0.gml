@@ -48,3 +48,15 @@ else{
 
 x+=x_spd*movespd;
 y+=y_spd*movespd;
+
+
+if((x_spd!=0||y_spd!=0)&&sndtimer<0){
+	sndtimer = 30;
+	audio_play_sound(stone_sliding, 100, false, 1, 9.97, 1, 1);
+}
+if(sndtimer>0){
+	sndtimer--;
+}
+if(sndtimer = 0){
+	sndtimer = -15;
+}
