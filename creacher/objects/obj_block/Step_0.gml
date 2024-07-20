@@ -10,6 +10,12 @@ if(obj_creacher.pushingy){
 else{
 	y_spd = 0;
 }
+if(abs(obj_creacher.x-x)>abs(obj_creacher.y-y)-3){
+	y_spd = 0;
+}
+if(abs(obj_creacher.y-y)>abs(obj_creacher.x-x)-3){
+	x_spd = 0;
+}
 
 
 
@@ -21,6 +27,10 @@ if(place_meeting(x+x_spd, y , WALL)||place_meeting(x+x_spd, y , obj_block)){
     }
 
     x_spd=0;
+	xwall = true;
+}
+else{
+	xwall = false;
 }
 
 if (place_meeting( x, y +y_spd, WALL)||place_meeting( x, y +y_spd, obj_block)){
@@ -30,6 +40,10 @@ if (place_meeting( x, y +y_spd, WALL)||place_meeting( x, y +y_spd, obj_block)){
     }
 
     y_spd=0;
+	ywall = true;
+}
+else{
+	ywall = false;
 }
 
 x+=x_spd*movespd;

@@ -23,9 +23,9 @@ if (place_meeting( x + x_spd, y +y_spd, WALL)){
 }
 
 //push
-if(place_meeting(x+x_spd, y , obj_block)){
+if(keyboard_check(vk_space) && place_meeting(x+2*x_spd, y , obj_block)){
 
-    var _pixelCheck = sign(x_spd);
+    var _pixelCheck = sign(2*x_spd);
     while (!place_meeting(x + _pixelCheck,y,obj_block)){
         x+=_pixelCheck;
     }
@@ -36,8 +36,8 @@ if(place_meeting(x+x_spd, y , obj_block)){
 else
 	pushingx = false;
 
-if (place_meeting( x, y +y_spd, obj_block)){
-    var _pixelCheck = sign(y_spd);
+if (keyboard_check(vk_space) && place_meeting( x, y +2*y_spd, obj_block)){
+    var _pixelCheck = sign(2*y_spd);
     while (!place_meeting(x, y+_pixelCheck,obj_block)){
         y+=_pixelCheck;
     }
@@ -47,6 +47,26 @@ if (place_meeting( x, y +y_spd, obj_block)){
 }
 else
 	pushingy = false;
+	
+//block wall
+if((obj_block.xwall&&place_meeting(x+x_spd, y , obj_block))||(place_meeting(x+x_spd, y , obj_block))&&!keyboard_check(vk_space)){
+
+    var _pixelCheck = sign(x_spd);
+    while (!place_meeting(x + _pixelCheck,y,obj_block)){
+        x+=_pixelCheck;
+    }
+
+    x_spd=0;
+}
+
+if((obj_block.ywall&&place_meeting( x + x_spd, y +y_spd, obj_block))||(place_meeting(x+x_spd, y , obj_block))&&!keyboard_check(vk_space)){
+    var _pixelCheck = sign(y_spd);
+    while (!place_meeting(x + x_spd, y+_pixelCheck,obj_block)){
+        y+=_pixelCheck;
+    }
+
+    y_spd=0;
+}
 
 x+=x_spd*movespd;
 y+=y_spd*movespd;
@@ -55,6 +75,8 @@ else{
 	pushingx = false;
 	pushingy = false;
 }
+
+
 
 
 
