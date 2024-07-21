@@ -1,10 +1,12 @@
-if(keyboard_check_pressed(vk_shift)&&shift_timer<0){
+if(keyboard_check_pressed(vk_shift)&&shift_timer<0&&!place_meeting(obj_girl.x,obj_girl.y,obj_block)){
 	lastchar = char;
 	char = "none";
 	persistify = true;
 	swaptimer = 27;
 	image_speed = 1;
 	shift_timer = 60;
+	obj_creacher.pushingx=false;
+	obj_creacher.pushingy=false;
 }
 if(swaptimer>0){
 	swaptimer--;

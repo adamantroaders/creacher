@@ -70,14 +70,16 @@ if((obj_block.ywall&&place_meeting( x + x_spd, y +y_spd, obj_block))/*||(place_m
 
 x+=x_spd*movespd;
 y+=y_spd*movespd;
+
+	while(place_meeting(x,y,WALL)){
+		var getouttahere = round(random_range(-1,1));
+		y+=getouttahere;
+		x+=getouttahere;
+	}
 }
 
 
-while(place_meeting(x,y,WALL)){
-	var getouttahere = round(random_range(-10,10));
-	y+=getouttahere;
-	x+=getouttahere;
-}
+
 
 
 

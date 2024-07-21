@@ -23,6 +23,12 @@ if (place_meeting( x, y +y_spd, WALL)||place_meeting( x, y +y_spd, obj_block)){
 
 x+=x_spd*movespd;
 y+=y_spd*movespd;
+
+	while(place_meeting(x,y,WALL)){
+		var getouttahere = round(random_range(-1,1));
+		y+=getouttahere;
+		x+=getouttahere;
+	}
 }
 if(obj_shift.persistify){
 	persistent = true;
