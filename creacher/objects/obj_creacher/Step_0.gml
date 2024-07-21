@@ -35,7 +35,7 @@ if(/*keyboard_check(vk_space) && */place_meeting(x+8*x_spd, y , obj_block)){
 else
 	pushingx = false;
 
-if (/*keyboard_check(vk_space) && */place_meeting( x, y +8*y_spd, obj_block)){
+if (/*keyboard_check(vk_space) && */place_meeting( x, y +8*y_spd, obj_block)&&obj_block.pushable){
     var _pixelCheck = sign(8*y_spd);
     while (!place_meeting(x, y+_pixelCheck,obj_block)){
         y+=_pixelCheck;
