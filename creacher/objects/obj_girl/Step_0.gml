@@ -21,8 +21,16 @@ if (place_meeting( x, y +y_spd, WALL)||place_meeting( x, y +y_spd, obj_block)){
     y_spd=0;
 }
 
-x+=x_spd*movespd;
-y+=y_spd*movespd;
+x+=x_spd*movespd*canmove;
+y+=y_spd*movespd*canmove;
+
+if(keyboard_check(vk_space)&&anim_timer<0){
+	sprite_index = spr_girl_transform;
+	image_speed = 15;
+	anim_timer = 120//*fps/image_speed;
+	canmove = 0;
+	depth = -99;
+}
 
 	while(place_meeting(x,y,WALL)){
 		var getouttahere = round(random_range(-1,1));
@@ -35,4 +43,14 @@ if(obj_shift.persistify){
 }
 else{
 	persistent = false;
+}
+if(anim_timer = 0){
+	anim_timer = -15;
+	canmove = 1;
+	sprite_index = spr_girl;
+	image_speed = 0;
+	depth = autodepth;
+}
+if(anim_timer > 0){
+	anim_timer--;
 }

@@ -1,0 +1,1 @@
+anim_timer = 0;
