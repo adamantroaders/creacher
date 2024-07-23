@@ -44,6 +44,7 @@
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"stone_sliding","path":"sounds/stone_sliding/stone_sliding.yy",},},
     {"id":{"name":"spr_block","path":"sprites/spr_block/spr_block.yy",},},
+    {"id":{"name":"spr_creacher_1","path":"sprites/spr_creacher_1/spr_creacher_1.yy",},},
     {"id":{"name":"spr_creacher_trans","path":"sprites/spr_creacher_trans/spr_creacher_trans.yy",},},
     {"id":{"name":"spr_creacher","path":"sprites/spr_creacher/spr_creacher.yy",},},
     {"id":{"name":"spr_friend","path":"sprites/spr_friend/spr_friend.yy",},},

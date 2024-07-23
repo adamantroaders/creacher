@@ -17,10 +17,24 @@ if(swaptimer==0){
 	swaptimer = -15;
 	if(lastchar=="girl"){
 		obj_girl.sprite_index = spr_girl_trans;
-		obj_creacher.sprite_index = spr_creacher;
+		if(obj_creacher.image_index==1){
+			temp_img_ind = 2.93;
+		}
+		else{
+			temp_img_ind = 0.93;
+		}
+		obj_creacher.sprite_index = spr_creacher_1;
+		obj_creacher.image_index = temp_img_ind;
 	}
 	else{
+		if((obj_creacher.image_index>=1 && obj_creacher.image_index<3)){
+			temp_img_ind = 1;
+		}
+		else{
+			temp_img_ind = 0;
+		}
 		obj_creacher.sprite_index = spr_creacher_trans;
+		obj_creacher.image_index = temp_img_ind;
 		obj_girl.sprite_index = spr_girl;
 	}
 }

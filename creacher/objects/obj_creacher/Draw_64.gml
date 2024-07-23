@@ -1,0 +1,1 @@
+draw_text(60,180,image_index)
