@@ -38,12 +38,7 @@ if(keyboard_check(vk_space)&&anim_timer<0){
 		x+=getouttahere;
 	}
 }
-if(obj_shift.persistify){
-	persistent = true;
-}
-else{
-	persistent = false;
-}
+
 if(anim_timer = 0){
 	anim_timer = -15;
 	canmove = 1;
@@ -53,4 +48,90 @@ if(anim_timer = 0){
 }
 if(anim_timer > 0){
 	anim_timer--;
+}
+
+
+//facing variable
+if(y_spd>0 && x_spd==0){
+	facing = "down";
+}
+if(y_spd<0 && x_spd==0){
+	facing = "up";
+}
+if(x_spd>0 && y_spd==0){
+	facing = "right";
+}
+if(x_spd<0 && y_spd==0){
+	facing = "left";
+}
+if(x_spd==0 && y_spd==0 && obj_shift.char=="girl"){
+	if(keyboard_check(ord("D")) - keyboard_check(ord("A"))==1)
+		facing = "right";
+	if(keyboard_check(ord("D")) - keyboard_check(ord("A"))==-1)
+		facing = "left";
+	if(keyboard_check(ord("S")) - keyboard_check(ord("W"))==1)
+		facing = "down";
+	if(keyboard_check(ord("S")) - keyboard_check(ord("W"))==-1)
+		facing = "up";
+}
+if(obj_shift.persistify){
+	persistent = true;
+	facing = "neutral";
+	if(sprite_index!=spr_girl_trans){
+		sprite_index = spr_girl;
+	}
+}
+else{
+	persistent = false;
+}
+
+//facing sprites
+if(obj_shift.char=="girl"){
+if(facing=="down"){
+	if(y_spd>0){
+		sprite_index = spr_girl_walkdown;
+		image_speed = img_spd;
+	}
+	else{
+		sprite_index = spr_girl_walkdown;
+		image_speed = 0;
+		image_index = 1.8;
+	}
+}
+if(facing=="up"){
+	if(y_spd<0){
+		sprite_index = spr_girl_walkup;
+		image_speed = img_spd;
+	}
+	else{
+		sprite_index = spr_girl_walkup;
+		image_speed = 0;
+		image_index = 1.8;
+	}
+}
+if(facing=="right"){
+	if(x_spd>0){
+		sprite_index = spr_girl_walkright;
+		image_speed = img_spd;
+	}
+	else{
+		sprite_index = spr_girl_walkright;
+		image_speed = 0;
+		image_index = 1.8;
+	}
+}
+if(facing=="left"){
+	if(x_spd<0){
+		sprite_index = spr_girl_walkleft;
+		image_speed = img_spd;
+	}
+	else{
+		sprite_index = spr_girl_walkleft;
+		image_speed = 0;
+		image_index = 1.8;
+	}
+}
+if(facing=="neutral"){
+	sprite_index = spr_girl;
+}
 }

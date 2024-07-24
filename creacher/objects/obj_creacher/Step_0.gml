@@ -78,13 +78,16 @@ y+=y_spd*movespd;
 	}
 }
 
-if(x_spd!=0 || y_spd!=0){
+if((x_spd!=0 || y_spd!=0)&&obj_shift.char == "creacher"){
 	image_speed = 1;
 }
-else if((image_index>=1&&image_index<2.9) || (image_index>=3) || (image_index<0.9)){
+else if(((image_index>=1&&image_index<2.9) || (image_index>=3) || (image_index<0.9))&&obj_shift.char == "creacher"){
 	image_speed = 1;
 }
 else{
+	image_speed = 0;
+}
+if(obj_shift.char != "creacher"){
 	image_speed = 0;
 }
 
