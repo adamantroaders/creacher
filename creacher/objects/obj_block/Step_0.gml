@@ -17,8 +17,36 @@ if(abs(obj_creacher.y-y)>abs(obj_creacher.x-x)-3){
 	x_spd = 0;
 }
 
+//pushing
+if(place_meeting(obj_creacher.x+8*x_spd, obj_creacher.y , obj_block)&&pushable){
+
+    var _pixelCheck = sign(8*x_spd);
+    while (!place_meeting(obj_creacher.x + _pixelCheck,obj_creacher.y,obj_block)){
+        x+=_pixelCheck;
+    }
+
+    obj_creacher.x_movespd=2;
+	obj_creacher.pushingx = true;
+}
+else
+	obj_creacher.pushingx = false;
+	obj_creacher.x_movespd=4;
+
+if (place_meeting( obj_creacher.x, obj_creacher.y +8*y_spd, obj_block)&&pushable){
+    var _pixelCheck = sign(8*obj_creacher.y_spd);
+    while (!place_meeting(obj_creacher.x, obj_creacher.y+_pixelCheck,obj_block)){
+        obj_creacher.y+=_pixelCheck;
+    }
+
+    obj_creacher.y_movespd=2;
+	obj_creacher.pushingy = true;
+}
+else
+	obj_creacher.pushingy = false;
+	obj_creacher.y_movespd=4;
 
 
+//block wall
 if(place_meeting(x+x_spd, y , WALL)||place_meeting(x+x_spd, y , obj_block)){
 
     var _pixelCheck = sign(x_spd);

@@ -21,8 +21,8 @@ if (place_meeting( x , y +y_spd, WALL)){
 }
 
 //push
-
-if(/*keyboard_check(vk_space) && */place_meeting(x+8*x_spd, y , obj_block)){
+/*
+if(place_meeting(x+8*x_spd, y , obj_block)){
 
     var _pixelCheck = sign(8*x_spd);
     while (!place_meeting(x + _pixelCheck,y,obj_block)){
@@ -35,7 +35,7 @@ if(/*keyboard_check(vk_space) && */place_meeting(x+8*x_spd, y , obj_block)){
 else
 	pushingx = false;
 
-if (/*keyboard_check(vk_space) && */place_meeting( x, y +8*y_spd, obj_block)&&obj_block.pushable){
+if (keyboard_check(vk_space) && place_meeting( x, y +8*y_spd, obj_block)&&obj_block.pushable){
     var _pixelCheck = sign(8*y_spd);
     while (!place_meeting(x, y+_pixelCheck,obj_block)){
         y+=_pixelCheck;
@@ -46,7 +46,7 @@ if (/*keyboard_check(vk_space) && */place_meeting( x, y +8*y_spd, obj_block)&&ob
 }
 else
 	pushingy = false;
-	
+*/
 //block wall
 if((obj_block.xwall&&place_meeting(x+x_spd, y , obj_block))/*||(place_meeting(x+x_spd, y , obj_block))&&!keyboard_check(vk_space)*/){
 
@@ -67,9 +67,21 @@ if((obj_block.ywall&&place_meeting( x + x_spd, y +y_spd, obj_block))/*||(place_m
     y_spd=0;
 }
 
+if(pushingx){
+	x_movespd = 2;
+}
+else{
+	//x_movespd = 4;
+}
+if(pushingy){
+	y_movespd = 2;
+}
+else{
+	//y_movespd = 4;
+}
 
-x+=x_spd*movespd;
-y+=y_spd*movespd;
+x+=x_spd*x_movespd;
+y+=y_spd*y_movespd;
 
 	while(place_meeting(x,y,WALL)){
 		var getouttahere = round(random_range(-1,1));
