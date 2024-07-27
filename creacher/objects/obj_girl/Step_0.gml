@@ -42,6 +42,7 @@ if(keyboard_check(vk_space)&&anim_timer<0){
 if(anim_timer = 0){
 	anim_timer = -15;
 	canmove = 1;
+	facing = "neutral";
 	sprite_index = spr_girl;
 	image_speed = 0;
 	depth = autodepth;
@@ -86,7 +87,7 @@ else{
 }
 
 //facing sprites
-if(obj_shift.char=="girl"){
+if(obj_shift.char=="girl"&&anim_timer==-15){
 if(facing=="down"){
 	if(y_spd>0){
 		sprite_index = spr_girl_walkdown;
@@ -133,5 +134,26 @@ if(facing=="left"){
 }
 if(facing=="neutral"){
 	sprite_index = spr_girl;
+}
+
+if(facing=="down"&&y_spd<0){
+	facing = "up";
+}
+if(facing=="up"&&y_spd>0){
+	facing = "down";
+}
+if(facing=="right"&&x_spd<0){
+	facing = "left";
+}
+if(facing=="left"&&x_spd>0){
+	facing = "right";
+}
+if(facing=="neutral"){
+	if(y_spd<0){
+		facing = "down";
+	}
+	if(y_spd>0){
+		facing = "up";
+	}
 }
 }

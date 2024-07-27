@@ -22,7 +22,7 @@ if(place_meeting(obj_creacher.x+8*x_spd, obj_creacher.y , obj_block)&&pushable){
 
     var _pixelCheck = sign(8*x_spd);
     while (!place_meeting(obj_creacher.x + _pixelCheck,obj_creacher.y,obj_block)){
-        x+=_pixelCheck;
+        obj.creacher.x+=_pixelCheck;
     }
 
     obj_creacher.x_movespd=2;
