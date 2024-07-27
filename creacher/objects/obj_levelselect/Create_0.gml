@@ -1,0 +1,11 @@
+finalx = 512;
+finaly = 156.03;
+//y = -480;
+deltay = finaly - y;
+a = -0.05;
+v = sqrt(2 * a * deltay)
+step = 1;
+done = false;
+open = false;
+lvl = 1;
+sprind = 1;
