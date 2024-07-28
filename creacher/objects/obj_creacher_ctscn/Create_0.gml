@@ -1,0 +1,9 @@
+x_dest = 1440;
+y_dest = 288;
+v_x = 0;
+v_y = 0;
+timer = -15;
+timer2 = -15;
+timer3 = -15;
+image_speed = 0;
+hole = -15;
