@@ -6,3 +6,7 @@ x_spd=0;
 y_spd=0;
 pushable = false;
 image_speed = 0;
+
+dir = "none";
+mvng = "none";
+timer = -15;

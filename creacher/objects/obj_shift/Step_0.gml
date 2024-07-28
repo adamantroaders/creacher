@@ -1,4 +1,4 @@
-if(keyboard_check_pressed(vk_shift)&&shift_timer<0&&!place_meeting(obj_girl.x,obj_girl.y,obj_block)&&obj_girl.canmove){
+if(instance_exists(obj_girl)&&keyboard_check_pressed(vk_shift)&&shift_timer<0&&!place_meeting(obj_girl.x,obj_girl.y,obj_block)&&obj_girl.canmove){
 	lastchar = char;
 	obj_girl.image_speed = 0;
 	obj_creacher.image_speed = 0;
@@ -18,7 +18,6 @@ if(swaptimer>0){
 }
 if(swaptimer==0){
 	room = target_room;
-	persistify = false;
 	swaptimer = -15;
 	if(lastchar=="girl"){
 		obj_girl.image_speed = 0;
@@ -31,6 +30,10 @@ if(swaptimer==0){
 		}
 		obj_creacher.sprite_index = spr_creacher_1;
 		obj_creacher.image_index = temp_img_ind;
+		
+		if(instance_exists(obj_friend)&&obj_friend.image_index<1){
+			obj_friend.sprite_index = spr_friend_trans;
+		}
 	}
 	else{
 		if((obj_creacher.image_index>=1 && obj_creacher.image_index<3)){
@@ -45,6 +48,9 @@ if(swaptimer==0){
 		obj_creacher.image_index = temp_img_ind;
 		obj_girl.image_speed = 0;
 		obj_girl.sprite_index = spr_girl;
+		if(instance_exists(obj_friend)&&obj_friend.image_index<1){
+			obj_friend.sprite_index = spr_friend;
+		}
 	}
 }
 if room==target_room && image_index=1{
@@ -63,10 +69,34 @@ if room==target_room && image_index=1{
 		char = "girl";
 		obj_girl.facing = "down";
 	}
+	persistify = false;
 }
 if(shift_timer>0){
 	shift_timer--;
 }
 if(shift_timer==0){
 	shift_timer = -15;
+}
+
+if(shift){
+	image_speed = 1;
+	realshift_timer = 60;
+	shift = false;
+}
+
+if(realshift_timer==33){
+	room = target;
+}
+
+if room==target && image_index=1{
+	image_speed = 0;
+	image_index = 0;
+	target = title;
+}
+
+if(realshift_timer>0){
+	realshift_timer--;
+}
+if(realshift_timer==0){
+	realshift_timer = -15;
 }

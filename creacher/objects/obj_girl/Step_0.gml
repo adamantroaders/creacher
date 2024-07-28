@@ -2,7 +2,7 @@ if(obj_shift.char=="girl"){
 x_spd = keyboard_check(ord("D")) - keyboard_check(ord("A"));
 y_spd = keyboard_check(ord("S")) - keyboard_check(ord("W"));
 
-if(place_meeting(x+x_spd, y , WALL)||place_meeting(x+x_spd, y , obj_block)){
+if(sprite_index!=spr_girl_transform&&(place_meeting(x+x_spd, y , WALL)||place_meeting(x+x_spd, y , obj_block))){
 
     var _pixelCheck = sign(x_spd);
     while (!place_meeting(x + _pixelCheck,y,WALL)&&!place_meeting(x + _pixelCheck,y,obj_block)){
@@ -12,7 +12,7 @@ if(place_meeting(x+x_spd, y , WALL)||place_meeting(x+x_spd, y , obj_block)){
     x_spd=0;
 }
 
-if (place_meeting( x, y +y_spd, WALL)||place_meeting( x, y +y_spd, obj_block)){
+if (sprite_index!=spr_girl_transform&&(place_meeting( x, y +y_spd, WALL)||place_meeting( x, y +y_spd, obj_block))){
     var _pixelCheck = sign(y_spd);
     while (!place_meeting(x, y+_pixelCheck,WALL)&&!place_meeting(x, y+_pixelCheck,obj_block)){
         y+=_pixelCheck;
@@ -32,7 +32,7 @@ if(keyboard_check(vk_space)&&anim_timer<0){
 	depth = -99;
 }
 
-	while(place_meeting(x,y,WALL)){
+	while(place_meeting(x,y,WALL)&&sprite_index!=spr_girl_transform){
 		var getouttahere = round(random_range(-1,1));
 		y+=getouttahere;
 		x+=getouttahere;
@@ -156,4 +156,12 @@ if(facing=="neutral"){
 		facing = "up";
 	}
 }
+}
+if(obj_lightswitch.playtime&&visible){
+	visible = false;
+	canmove = false;
+	obj_girl_ctscn.x = x;
+	obj_girl_ctscn.y = y;
+	x = 0;
+	y = 0;
 }

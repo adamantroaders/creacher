@@ -5,3 +5,6 @@ sndtimer = -15;
 x_spd=0;
 y_spd=0;
 pushable = true;
+dir = "none";
+mvng = "none";
+timer = -15;

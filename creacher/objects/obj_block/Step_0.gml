@@ -1,4 +1,58 @@
-if(obj_creacher.pushingx){
+if(pushable&&keyboard_check_pressed(vk_space)&&timer==-15){
+	if((obj_creacher.x-x)<-127&&(obj_creacher.x-x)>-160&&abs(obj_creacher.y-y)<64){
+		if(!place_meeting(x+64,y,WALL)&&!place_meeting(x+64,y,obj_girl)&&!place_meeting(x+64,y,obj_block)){
+			dir = "right";
+			timer = 8;
+		}
+	}
+	if((obj_creacher.x-x)>127&&(obj_creacher.x-x)<160&&abs(obj_creacher.y-y)<64){
+		if(!place_meeting(x-64,y,WALL)&&!place_meeting(x-64,y,obj_girl)&&!place_meeting(x-64,y,obj_block)){
+			dir = "left";
+			timer = 8;
+		}
+	}
+	if((obj_creacher.y-y)<-127&&(obj_creacher.y-y)>-160&&abs(obj_creacher.x-x)<64){
+		if(!place_meeting(x,y+64,WALL)&&!place_meeting(x,y+64,obj_girl)&&!place_meeting(x,y+64,obj_block)){
+			dir = "down";
+			timer = 8;
+		}
+	}
+	if((obj_creacher.y-y)>127&&(obj_creacher.y-y)<160&&abs(obj_creacher.x-x)<64){
+		if(!place_meeting(x,y-64,WALL)&&!place_meeting(x,y-64,obj_girl)&&!place_meeting(x,y-64,obj_block)){
+			dir = "up";
+			timer = 8;
+		}
+	}
+}
+else{
+	dir = "none";
+}
+if(dir!="none"){
+	mvng = dir;
+}
+if(mvng=="right"){
+	x+=8;
+}
+if(mvng=="left"){
+	x-=8;
+}
+if(mvng=="down"){
+	y+=8;
+}
+if(mvng=="up"){
+	y-=8;
+}
+if(timer>0){
+	timer--;
+}
+if(timer==0){
+	timer = -15;
+	mvng = "none";
+}
+
+
+
+/*if(obj_creacher.pushingx){
 	x_spd = keyboard_check(ord("D")) - keyboard_check(ord("A"));
 }
 else{
@@ -22,15 +76,15 @@ if(place_meeting(obj_creacher.x+8*x_spd, obj_creacher.y , obj_block)&&pushable){
 
     var _pixelCheck = sign(8*x_spd);
     while (!place_meeting(obj_creacher.x + _pixelCheck,obj_creacher.y,obj_block)){
-        obj_levelselect.creacher.x+=_pixelCheck;
+        obj_creacher.x+=_pixelCheck;
     }
 
-    obj_creacher.x_movespd=2;
+    //obj_creacher.x_movespd=2;
 	obj_creacher.pushingx = true;
 }
 else
 	obj_creacher.pushingx = false;
-	obj_creacher.x_movespd=4;
+	//obj_creacher.x_movespd=4;
 
 if (place_meeting( obj_creacher.x, obj_creacher.y +8*y_spd, obj_block)&&pushable){
     var _pixelCheck = sign(8*obj_creacher.y_spd);
@@ -38,12 +92,12 @@ if (place_meeting( obj_creacher.x, obj_creacher.y +8*y_spd, obj_block)&&pushable
         obj_creacher.y+=_pixelCheck;
     }
 
-    obj_creacher.y_movespd=2;
+    //obj_creacher.y_movespd=2;
 	obj_creacher.pushingy = true;
 }
 else
 	obj_creacher.pushingy = false;
-	obj_creacher.y_movespd=4;
+	//obj_creacher.y_movespd=4;
 
 
 //block wall
@@ -87,4 +141,4 @@ if(sndtimer>0){
 }
 if(sndtimer = 0){
 	sndtimer = -15;
-}
+}*/
