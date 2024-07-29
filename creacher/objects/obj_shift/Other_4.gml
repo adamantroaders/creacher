@@ -1,0 +1,1 @@
+starttimer = 30;

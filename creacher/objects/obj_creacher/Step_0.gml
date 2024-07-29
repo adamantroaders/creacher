@@ -3,7 +3,7 @@ x_spd = keyboard_check(ord("D")) - keyboard_check(ord("A"));
 y_spd = keyboard_check(ord("S")) - keyboard_check(ord("W"));
 
 //wall
-if(place_meeting(x+x_spd, y , WALL)){
+if(!sliding&&place_meeting(x+x_spd, y , WALL)){
 
     var _pixelCheck = sign(x_spd);
     while (!place_meeting(x + _pixelCheck,y,WALL)){
@@ -12,7 +12,7 @@ if(place_meeting(x+x_spd, y , WALL)){
     x_spd=0;
 }
 
-if (place_meeting( x , y +y_spd, WALL)){
+if (!sliding&&place_meeting( x , y +y_spd, WALL)){
     var _pixelCheck = sign(y_spd);
     while (!place_meeting(x , y+_pixelCheck,WALL)){
         y+=_pixelCheck;
@@ -80,14 +80,69 @@ else{
 	//y_movespd = 4;
 }
 
+if(slide_timer==0){
+	slide_timer = -15;
+	sliding = false;
+	if(obj_creacher.image_index==1){
+		temp_img_ind = 2.93;
+	}
+	else{
+		temp_img_ind = 0.93;
+	}
+	obj_creacher.sprite_index = spr_creacher_1;
+	obj_creacher.image_index = temp_img_ind;
+}
+
+if(slide_timer>0){
+	slide_timer--;
+}
+
+if(sliding){
+	if(slide_timer==-15){
+		slide_timer = 50;
+		if((obj_creacher.image_index>=1 && obj_creacher.image_index<3)){
+			temp_img_ind = 1;
+			obj_creacher.image_index = 2.93;
+		}
+		else{
+			temp_img_ind = 0;
+			obj_creacher.image_index = 0.93;
+		}
+		obj_creacher.sprite_index = spr_creacher_trans;
+		obj_creacher.image_index = temp_img_ind;
+		obj_girl.image_speed = 0;
+	}
+	if(dir=="up"){
+		y-=4;
+	}
+	if(dir=="down"){
+		y+=4;
+	}
+	if(dir=="left"){
+		x-=4;
+	}
+	if(dir=="right"){
+		x+=4;
+	}
+}
+
+
+
+
+
+
+
+if(!sliding){
 x+=x_spd*x_movespd;
 y+=y_spd*y_movespd;
+
 
 	while(place_meeting(x,y,WALL)){
 		var getouttahere = round(random_range(-1,1));
 		y+=getouttahere;
 		x+=getouttahere;
 	}
+}
 }
 
 if((x_spd!=0 || y_spd!=0)&&obj_shift.char == "creacher"){

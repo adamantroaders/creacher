@@ -11,4 +11,6 @@ realshift_timer = -15;
 shift = false;
 nexttarget = title;
 shift2 = false;
-reset_timer = -15;
+reset_timer = -55;
+maybeweird = false;
+starttimer = 30;
