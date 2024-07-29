@@ -9,3 +9,6 @@ lastchar = "girl";
 shift_timer = -15;
 realshift_timer = -15;
 shift = false;
+nexttarget = title;
+shift2 = false;
+reset_timer = -15;

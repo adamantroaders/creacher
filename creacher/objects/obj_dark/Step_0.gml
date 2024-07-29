@@ -1,6 +1,7 @@
 if(obj_lightswitch.dark){
 	dark_timer = 45;
 	obj_lightswitch.dark = false;
+	first = false;
 }
 
 if(dark_timer==0){

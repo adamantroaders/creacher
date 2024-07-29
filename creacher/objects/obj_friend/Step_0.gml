@@ -1,4 +1,4 @@
-if(pushable&&keyboard_check_pressed(vk_space)&&timer==-15){
+if(obj_shift.char=="creacher"&&pushable&&keyboard_check_pressed(vk_space)&&timer==-15){
 	if((obj_creacher.x-x)<-127&&(obj_creacher.x-x)>-160&&abs(obj_creacher.y-y)<64){
 		if(!place_meeting(x+64,y,WALL)&&!place_meeting(x+64,y,obj_girl)&&!place_meeting(x+64,y,obj_block)){
 			dir = "right";
@@ -48,4 +48,11 @@ if(timer>0){
 if(timer==0){
 	timer = -15;
 	mvng = "none";
+}
+
+if(obj_shift.persistify){
+	persistent = true;
+}
+else{
+	persistent = false;
 }

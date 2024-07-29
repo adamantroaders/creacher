@@ -1,6 +1,7 @@
 image_speed = 0;
-xmin = 1520;
-xmax = 1680;
-ymin = 320;
+xmin = x-80;
+xmax = x+80;
+ymin = y+160;
 playtime = false;
 dark = false;
+depth = -1;

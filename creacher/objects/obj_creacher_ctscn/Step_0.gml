@@ -10,16 +10,16 @@ if(obj_dark.dark){
 	y = obj_creacher.y;
 	obj_creacher.visible = false;
 	visible = true;
-	timer = 30;
+	timer = 75;
 }
 if(timer>0){
 	timer--;
 }
 if(timer==0){
 	image_speed = 1;
-	v_x = (x_dest-x)/120;
-	v_y = (y_dest-y)/120;
-	timer2 = 120;
+	v_x = (x_dest-x)/frames;
+	v_y = (y_dest-y)/frames;
+	timer2 = frames;
 	timer = -15;
 }
 x+=v_x;

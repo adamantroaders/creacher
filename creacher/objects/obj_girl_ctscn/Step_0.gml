@@ -96,7 +96,8 @@ if(holetimer==0){
 			first = true;
 		}
 	}
-	else{
+	else if(vis_timer>0){
+		vis_timer--;
 		sprite_index = spr_girl_walkup;
 		if(first){
 			image_index = 1.8;
@@ -106,4 +107,14 @@ if(holetimer==0){
 			y-=2;
 		}
 	}
+}
+if(vis_timer==0){
+	image_speed = 0;
+	image_index = 1.8;
+	if(image_alpha>0){
+		image_alpha-=0.1;
+	}
+}
+if(image_alpha<=0){
+	y-=8;
 }

@@ -42,13 +42,13 @@ if(lvl==4){
 	target = Room2;
 }
 if(lvl==5){
-	target = Room5;
+	target = Room6;
 }
 if(lvl==6){
 	target = Room6;
 }
 if(lvl==7){
-	target = Room7;
+	target = Room12;
 }
 if(lvl==8){
 	target = Room8;

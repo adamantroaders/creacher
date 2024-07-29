@@ -21,7 +21,10 @@ if(timer==0 && room==Room2){
 */
 if(timer==0){
 	timer = -15;
-	audio_play_sound(current_bgm, 0, true);
+	if(current_bgm!=playing){
+		audio_play_sound(current_bgm, 0, true);
+		playing = current_bgm;
+	}
 }
 if(timer>0){
 	timer--;

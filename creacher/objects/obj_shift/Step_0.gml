@@ -83,20 +83,51 @@ if(shift){
 	realshift_timer = 60;
 	shift = false;
 }
+if(reset_timer>0){
+	reset_timer--;
+}
+if(reset_timer==0){
+	room = nexttarget;
+	reset_timer = -15;
+	shift2 = false;
+	char = "girl";
+	//obj_girl.canmove = false;
+}
 
 if(realshift_timer==33){
 	room = target;
+	if(shift2){
+		reset_timer = 1;
+	}
 }
 
-if room==target && image_index=1{
+if (room==target||(room==nexttarget&&nexttarget!=title)) && image_index==1 && image_speed==-1{
 	image_speed = 0;
 	image_index = 0;
 	target = title;
+	nexttarget = title;
+	obj_girl.canmove = true;
+	realshift_timer = 0;
 }
 
 if(realshift_timer>0){
 	realshift_timer--;
+	if(instance_exists(obj_girl)){
+		obj_girl.canmove = false;
+	}
 }
 if(realshift_timer==0){
 	realshift_timer = -15;
+}
+if(keyboard_check_pressed(ord("R"))&&image_speed==0){
+	nexttarget = room;
+	if(room==Room1_shadow){
+		nexttarget = Room1;
+	}
+	char = "none";
+	lastchar = "creacher";
+	obj_girl.canmove = false;
+	target = title;
+	shift = true;
+	shift2 = true;
 }
