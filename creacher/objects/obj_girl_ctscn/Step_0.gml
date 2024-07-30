@@ -68,6 +68,9 @@ if(godown>0){
 if(obj_creacher_ctscn.hole==0){
 	holetimer = 15;
 	obj_creacher_ctscn.hole = -10;
+	if(room==Room6||room==Room12){
+		audio_group_set_gain(audiogroup_default,0,3500);
+	}
 }
 if(holetimer>0){
 	holetimer--;
@@ -117,4 +120,10 @@ if(vis_timer==0){
 }
 if(image_alpha<=0){
 	y-=8;
+}
+if(obj_shift.persistify){
+	persistent = true;
+}
+else{
+	persistent = false;
 }

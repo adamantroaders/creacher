@@ -28,3 +28,13 @@ if(dark_timer==16){
 if(dark_timer==12){
 	visible = false;
 }
+if(obj_shift.persistify){
+	persistent = true;
+}
+else{
+	persistent = false;
+}
+
+if(obj_shift.pause){
+	visible = true;
+}

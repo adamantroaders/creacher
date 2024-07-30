@@ -1,4 +1,4 @@
 dark_timer = -15;
 image_speed = 0;
 dark = false;
-depth = -9999;
+depth = -999;

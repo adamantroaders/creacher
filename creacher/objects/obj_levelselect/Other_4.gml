@@ -1,5 +1,10 @@
+if(!first){
 if(room==title){
+x = truex;
 finalx = x;
+obj_shift.pause = false;
+char = "girl";
+visible = true;
 if(x==784||x==1072){
 	timer = 15;
 }
@@ -26,3 +31,5 @@ if(x>1024){
 step = 1;
 done = false;
 }
+}
+first = false;

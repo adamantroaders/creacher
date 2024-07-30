@@ -91,6 +91,7 @@ if(slide_timer==0){
 	}
 	obj_creacher.sprite_index = spr_creacher_1;
 	obj_creacher.image_index = temp_img_ind;
+	obj_girl.canmove = true;
 }
 
 if(slide_timer>0){
@@ -99,7 +100,7 @@ if(slide_timer>0){
 
 if(sliding){
 	if(slide_timer==-15){
-		slide_timer = 50;
+		slide_timer = 25;
 		if((obj_creacher.image_index>=1 && obj_creacher.image_index<3)){
 			temp_img_ind = 1;
 			obj_creacher.image_index = 2.93;
@@ -113,17 +114,18 @@ if(sliding){
 		obj_girl.image_speed = 0;
 	}
 	if(dir=="up"){
-		y-=4;
+		y-=8;
 	}
 	if(dir=="down"){
-		y+=4;
+		y+=8;
 	}
 	if(dir=="left"){
-		x-=4;
+		x-=8;
 	}
 	if(dir=="right"){
-		x+=4;
+		x+=8;
 	}
+	obj_girl.canmove = false;
 }
 
 

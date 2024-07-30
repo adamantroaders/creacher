@@ -1,3 +1,9 @@
+if(obj_shift.persistify){
+	persistent = true;
+}
+else{
+	persistent = false;
+}
 if(obj_dark.dark){
 	obj_dark.dark = false;
 	if(obj_creacher.image_index==0){

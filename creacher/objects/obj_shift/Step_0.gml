@@ -56,6 +56,30 @@ if(swaptimer==0){
 if room==target_room && image_index=1{
 	image_speed = 0;
 	image_index = 0;
+	/*if(room==Room1){
+		target_room = Room1_shadow;
+	}
+	if(room==Room1_shadow){
+		target_room = Room1;
+	}
+	if(room==Room2){
+		target_room = Room2_shadow;
+	}
+	if(room==Room2_shadow){
+		target_room = Room2;
+	}
+	if(room==Room3){
+		target_room = Room3_shadow;
+	}
+	if(room==Room3_shadow){
+		target_room = Room3;
+	}
+	if(room==Room4){
+		target_room = Room4_shadow;
+	}
+	if(room==Room4_shadow){
+		target_room = Room4;
+	}
 	if(room==Room1){
 		target_room = Room1_shadow;
 	}
@@ -68,6 +92,79 @@ if room==target_room && image_index=1{
 	if(room==Room2_shadow){
 		target_room = Room2;
 	}
+	if(room==Room1){
+		target_room = Room1_shadow;
+	}
+	if(room==Room1_shadow){
+		target_room = Room1;
+	}
+	if(room==Room2){
+		target_room = Room2_shadow;
+	}
+	if(room==Room2_shadow){
+		target_room = Room2;
+	}
+	if(room==Room1){
+		target_room = Room1_shadow;
+	}
+	if(room==Room1_shadow){
+		target_room = Room1;
+	}
+	if(room==Room2){
+		target_room = Room2_shadow;
+	}
+	if(room==Room2_shadow){
+		target_room = Room2;
+	}
+	if(room==Room1){
+		target_room = Room1_shadow;
+	}
+	if(room==Room1_shadow){
+		target_room = Room1;
+	}
+	if(room==Room2){
+		target_room = Room2_shadow;
+	}
+	if(room==Room2_shadow){
+		target_room = Room2;
+	}
+	if(room==Room1){
+		target_room = Room1_shadow;
+	}
+	if(room==Room1_shadow){
+		target_room = Room1;
+	}
+	if(room==Room2){
+		target_room = Room2_shadow;
+	}
+	if(room==Room2_shadow){
+		target_room = Room2;
+	}
+	if(room==Room1){
+		target_room = Room1_shadow;
+	}
+	if(room==Room1_shadow){
+		target_room = Room1;
+	}
+	if(room==Room2){
+		target_room = Room2_shadow;
+	}
+	if(room==Room2_shadow){
+		target_room = Room2;
+	}
+	if(room==Room1){
+		target_room = Room1_shadow;
+	}
+	if(room==Room1_shadow){
+		target_room = Room1;
+	}
+	if(room==Room2){
+		target_room = Room2_shadow;
+	}
+	if(room==Room2_shadow){
+		target_room = Room2;
+	}
+	*/
 	if(lastchar=="girl"){
 		char = "creacher";
 	}
@@ -112,7 +209,9 @@ if((room==target||(room==nexttarget&&nexttarget!=title)) && image_index==1 && im
 	image_index = 0;
 	target = title;
 	nexttarget = title;
-	obj_girl.canmove = true;
+	if(instance_exists(obj_girl)){
+		obj_girl.canmove = true;
+	}
 	realshift_timer = 0;
 }
 
@@ -130,6 +229,57 @@ if(keyboard_check_pressed(ord("R"))&&image_speed==0){
 	if(room==Room1_shadow){
 		nexttarget = Room1;
 	}
+	if(room==Room2_shadow){
+		nexttarget = Room2;
+	}
+	if(room==Room3_shadow){
+		nexttarget = Room3;
+	}
+	if(room==Room4_shadow){
+		nexttarget = Room4;
+	}
+	if(room==Room5_shadow){
+		nexttarget = Room5;
+	}
+	if(room==Room6_shadow){
+		nexttarget = Room6;
+	}/*
+	if(room==Room7_shadow){
+		nexttarget = Room7;
+	}
+	if(room==Room8_shadow){
+		nexttarget = Room8;
+	}
+	if(room==Room9_shadow){
+		nexttarget = Room9;
+	}
+	if(room==Room10_shadow){
+		nexttarget = Room10;
+	}
+	if(room==Room11_shadow){
+		nexttarget = Room11;
+	}
+	if(room==Room12_shadow){
+		nexttarget = Room12;
+	}
+	if(room==Room13_shadow){
+		nexttarget = Room13;
+	}
+	if(room==Room14_shadow){
+		nexttarget = Room14;
+	}
+	if(room==Room15_shadow){
+		nexttarget = Room15;
+	}
+	if(room==Room16_shadow){
+		nexttarget = Room16;
+	}
+	if(room==Room17_shadow){
+		nexttarget = Room17;
+	}
+	if(room==Room18_shadow){
+		nexttarget = Room18;
+	}*/
 	char = "none";
 	lastchar = "creacher";
 	obj_girl.canmove = false;
@@ -169,7 +319,7 @@ if(starttimer==0){
 	if(room==Room3_shadow){
 		target_room = Room3;
 	}
-	/*if(room==Room4){
+	if(room==Room4){
 		target_room = Room4_shadow;	
 	}
 	if(room==Room4_shadow){
@@ -186,7 +336,7 @@ if(starttimer==0){
 	}
 	if(room==Room6_shadow){
 		target_room = Room6;
-	}
+	}/*
 	if(room==Room7){
 		target_room = Room7_shadow;	
 	}
@@ -261,4 +411,37 @@ if(starttimer==0){
 	}
 	
 	*/
+}
+
+if(pause&&keyboard_check_pressed(vk_escape)&&image_speed==0&&instance_exists(obj_girl)&&obj_girl.canmove){
+	pause = false;
+	char = lastchar;
+	if(instance_exists(obj_dark)){
+		obj_dark.visible = false;
+	}
+	if(instance_exists(obj_returnbutton)){
+		obj_returnbutton.visible = false;
+		obj_returnprompt.visible = false;
+	}
+}
+else if(!pause&&keyboard_check_pressed(vk_escape)&&image_speed==0&&instance_exists(obj_girl)&&obj_girl.canmove){
+	pause = true;
+	lastchar = char;
+	char = "none";
+}
+
+if(obj_returnbutton.ret){
+	target = title;
+	nexttarget = target;
+	char = "none";
+	lastchar = "creacher";
+	obj_girl.canmove = false;
+	target = title;
+	shift = true;
+	shift2 = true;
+	maybeweird = true;
+	shift = true;
+	obj_returnbutton.ret = false;
+	audio_group_set_gain(audiogroup_default, 0, 500);
+	
 }

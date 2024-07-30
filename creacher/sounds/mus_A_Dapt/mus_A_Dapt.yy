@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":129.49333,
+  "duration":130.02667,
   "name":"mus_A_Dapt",
   "parent":{
     "name":"Sounds",

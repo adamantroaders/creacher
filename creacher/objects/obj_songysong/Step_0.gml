@@ -22,6 +22,8 @@ if(timer==0 && room==Room2){
 if(timer==0){
 	timer = -15;
 	if(current_bgm!=playing){
+		audio_stop_sound(playing);
+		audio_group_set_gain(audiogroup_default,1,0);
 		audio_play_sound(current_bgm, 0, true);
 		playing = current_bgm;
 	}

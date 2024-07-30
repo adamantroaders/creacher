@@ -9,7 +9,7 @@ if(room==Room2||room==Room2_shadow){
 if(room==Room3||room==Room3_shadow){
 	obj_shift.target = Room4;
 }
-/*if(room==Room4||room==Room4_shadow){
+if(room==Room4||room==Room4_shadow){
 	obj_shift.target = Room5;
 }
 if(room==Room5||room==Room5_shadow){
@@ -17,7 +17,7 @@ if(room==Room5||room==Room5_shadow){
 }
 if(room==Room6||room==Room6_shadow){
 	obj_shift.target = Room7;
-}
+}/*
 if(room==Room7||room==Room7_shadow){
 	obj_shift.target = Room8;
 }

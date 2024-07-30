@@ -8,3 +8,9 @@ if(obj_creacher_ctscn.hole==0||obj_creacher_ctscn.hole==-10){
 	}
 	first = false;
 }
+if(obj_shift.persistify){
+	persistent = true;
+}
+else{
+	persistent = false;
+}

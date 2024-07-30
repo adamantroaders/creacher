@@ -1,0 +1,1 @@
+draw_text(1000,60,pressed);

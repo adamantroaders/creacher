@@ -1,0 +1,10 @@
+dir = "down";
+ymin = y-128;
+ymax = y+128;
+xmin = x-128;
+xmax = x+128;
+depth = 100;
+d = depth;
+init_y = y;
+init_x = x;
+button = 1;
