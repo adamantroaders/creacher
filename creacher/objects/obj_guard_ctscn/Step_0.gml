@@ -174,7 +174,7 @@ if(dw<190&&obj_girl_ctscn2.y>obj_creacher_ctscn2.y-6){
 	obj_girl_ctscn2.x_spd = 8;
 }
 
-if(dw==0){
+if(dw==1){
 	obj_shift.target = rm_end;
 	obj_shift.shift = true;
 }

@@ -19,3 +19,5 @@ resetti = false;
 realreset_timer = -15;
 finalshift = false;
 ending = false;
+
+fast = false;

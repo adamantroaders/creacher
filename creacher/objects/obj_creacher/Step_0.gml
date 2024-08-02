@@ -183,8 +183,33 @@ if(obj_shift.persistify){
 else{
 	persistent = false;
 }
-
-if(!room==Room18||obj_girl_ctscn2.first){
+if(instance_exists(obj_girl_ctscn2)){
+if(!obj_girl_ctscn2.first){
+	if(x<0||x>room_width){
+	x = lastx;
+	fix = true;
+}
+else if(x>lastx+64||x<lastx-64){
+	x = lastx;
+	fix = true;
+}
+else{
+	lastx = x;
+}
+if(y<0||y>room_height){
+	y = lasty;
+	fix = true;
+}
+else if(y>lasty+64||y<lasty-64){
+	y = lasty;
+	fix = true;
+}
+else{
+	lasty = y;
+}
+}
+}
+if(!room==Room18){
 if(x<0||x>room_width){
 	x = lastx;
 	fix = true;
