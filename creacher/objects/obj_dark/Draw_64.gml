@@ -1,1 +1,0 @@
-draw_text(60,600,dark_timer);

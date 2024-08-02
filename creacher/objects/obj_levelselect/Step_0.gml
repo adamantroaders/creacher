@@ -46,7 +46,7 @@ else{
 }
 
 if(room==title && keyboard_check_pressed(vk_lcontrol)){
-	obj_shift.target = Room18;
+	obj_shift.target = rm_end;
 	obj_shift.shift = true;
 }
 
