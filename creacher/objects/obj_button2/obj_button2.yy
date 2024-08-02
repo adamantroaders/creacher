@@ -3,6 +3,7 @@
   "%Name":"obj_button2",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_button2",
@@ -33,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_button2",
-    "path":"sprites/spr_button2/spr_button2.yy",
+    "name":"spr_button3",
+    "path":"sprites/spr_button3/spr_button3.yy",
   },
   "spriteMaskId":null,
   "visible":true,

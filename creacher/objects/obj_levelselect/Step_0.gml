@@ -46,7 +46,7 @@ else{
 }
 
 if(room==title && keyboard_check_pressed(vk_lcontrol)){
-	obj_shift.target = Room6;
+	obj_shift.target = Room18;
 	obj_shift.shift = true;
 }
 
@@ -89,31 +89,31 @@ if(lvl==6){
 	}
 }
 if(lvl==7){
-	//target = Room7;
+	target = Room7;
 	if(room==target){
 		open = true;
 	}
 }
 if(lvl==8){
-	//target = Room8;
+	target = Room8;
 	if(room==target){
 		open = true;
 	}
 }
 if(lvl==9){
-	//target = Room9;
+	target = Room9;
 	if(room==target){
 		open = true;
 	}
 }
 if(lvl==10){
-	//target = Room10;
+	target = Room10;
 	if(room==target){
 		open = true;
 	}
 }
 if(lvl==11){
-	//target = Room11;
+	target = Room11;
 	if(room==target){
 		open = true;
 	}
@@ -125,37 +125,37 @@ if(lvl==12){
 	}
 }
 if(lvl==13){
-	//target = Room13;
+	target = Room13;
 	if(room==target){
 		open = true;
 	}
 }
 if(lvl==14){
-	//target = Room14;
+	target = Room14;
 	if(room==target){
 		open = true;
 	}
 }
 if(lvl==15){
-	//target = Room15;
+	target = Room15;
 	if(room==target){
 		open = true;
 	}
 }
 if(lvl==16){
-	//target = Room16;
+	target = Room16;
 	if(room==target){
 		open = true;
 	}
 }
 if(lvl==17){
-	//target = Room17;
+	target = Room17;
 	if(room==target){
 		open = true;
 	}
 }
 if(lvl==18){
-	//target = Room18;
+	target = Room18;
 	if(room==target){
 		open = true;
 	}

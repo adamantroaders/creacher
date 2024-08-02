@@ -10,3 +10,6 @@ image_speed = 0;
 dir = "none";
 mvng = "none";
 timer = -15;
+snail = false;
+guard = false;
+friend = true;

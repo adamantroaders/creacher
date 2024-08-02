@@ -9,3 +9,6 @@ sliding = false;
 slide_timer = -15;
 temp_img_ind = 0;
 dir = "none";
+lastx = x;
+lasty = y;
+fix = false;

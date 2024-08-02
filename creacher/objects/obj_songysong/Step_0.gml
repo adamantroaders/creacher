@@ -24,7 +24,9 @@ if(timer==0){
 	if(current_bgm!=playing){
 		audio_stop_sound(playing);
 		audio_group_set_gain(audiogroup_default,1,0);
+		if(!audio_is_playing(current_bgm)){
 		audio_play_sound(current_bgm, 0, true);
+		}
 		playing = current_bgm;
 	}
 }

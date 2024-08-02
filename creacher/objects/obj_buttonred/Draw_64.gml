@@ -1,0 +1,1 @@
+draw_text(700,700,depth);

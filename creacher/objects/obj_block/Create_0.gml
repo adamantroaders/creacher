@@ -8,3 +8,5 @@ pushable = true;
 dir = "none";
 mvng = "none";
 timer = -15;
+dep = depth;
+friend = false;

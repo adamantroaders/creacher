@@ -4,6 +4,6 @@ godown = -15;
 first = true;
 holetimer = -15;
 nextroom = false;
-vis_timer = 85;
+vis_timer = 70;
 image_alpha = 1;
 depth = -2;

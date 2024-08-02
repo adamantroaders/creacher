@@ -21,6 +21,16 @@ if (sprite_index!=spr_girl_transform&&(place_meeting( x, y +y_spd, WALL)||place_
     y_spd=0;
 }
 
+if(fix){
+	if(round(random_range(0,1))==0){
+		x_spd = 0;
+	}
+	else{
+		y_spd = 0;
+	}
+	fix = false;
+}
+
 x+=x_spd*movespd*canmove;
 y+=y_spd*movespd*canmove;
 
@@ -164,4 +174,36 @@ if(obj_lightswitch.playtime&&visible){
 	obj_girl_ctscn.y = y;
 	x = 0;
 	y = 0;
+}
+
+
+if(x<0||x>room_width){
+	if(obj_girl.canmove){
+	x = lastx;
+	fix = true;
+	}
+}
+else if(x>lastx+64||x<lastx-64){
+	if(obj_girl.canmove){
+	x = lastx;
+	fix = true;
+	}
+}
+else{
+	lastx = x;
+}
+if(y<0||y>room_height){
+	if(obj_girl.canmove){
+	y = lasty;
+	fix = true;
+	}
+}
+else if(y>lasty+64||y<lasty-64){
+	if(obj_girl.canmove){
+	y = lasty;
+	fix = true;
+	}
+}
+else{
+	lasty = y;
 }

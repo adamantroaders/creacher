@@ -56,3 +56,9 @@ if(obj_shift.persistify){
 else{
 	persistent = false;
 }
+
+if(pushable){
+	image_speed = 0;
+	sprite_index = spr_friend;
+	image_index = 20;
+}

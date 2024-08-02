@@ -52,6 +52,7 @@ if(timer3==0){
 	image_index = 1;
 	timer3 = -15;
 	hole = 10;
+	depth = -9
 }
 if(hole>0){
 	hole--;

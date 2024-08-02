@@ -15,3 +15,7 @@ reset_timer = -55;
 maybeweird = false;
 starttimer = 30;
 pause = false;
+resetti = false;
+realreset_timer = -15;
+finalshift = false;
+ending = false;

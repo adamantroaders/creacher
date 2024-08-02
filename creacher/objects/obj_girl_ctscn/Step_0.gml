@@ -45,6 +45,9 @@ if(obj_lightswitch.playtime){
 }
 if(timer==90){
 	obj_lightswitch.image_speed = 1;
+	if(room==Room18){
+		room = rm_end;
+	}
 }
 if(timer>0){
 	timer--;
@@ -126,4 +129,7 @@ if(obj_shift.persistify){
 }
 else{
 	persistent = false;
+}
+if(instance_exists(obj_hole)){
+	depth = obj_hole.depth-1;
 }

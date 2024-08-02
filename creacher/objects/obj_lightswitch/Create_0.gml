@@ -5,3 +5,4 @@ ymin = y+160;
 playtime = false;
 dark = false;
 depth = -1;
+dep = depth;
