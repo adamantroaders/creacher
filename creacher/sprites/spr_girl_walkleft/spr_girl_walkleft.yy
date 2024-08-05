@@ -1,7 +1,7 @@
 {
   "$GMSprite":"",
   "%Name":"spr_girl_walkleft",
-  "bboxMode":1,
+  "bboxMode":2,
   "bbox_bottom":127,
   "bbox_left":0,
   "bbox_right":127,

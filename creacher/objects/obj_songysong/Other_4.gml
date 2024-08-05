@@ -1,8 +1,5 @@
 if(!obj_shift.persistify){
-if(room==title){
-	if(obj_shift.reset_timer<0){
-		//audio_stop_sound(playing);
-	}
+if(room==rm_title||room==rm_test){
     current_bgm = mus_title;
 	timer = 0;
 }
@@ -19,7 +16,7 @@ else if(room==Room13||room==Room14||room==Room15||room==Room16||room==Room17||ro
 	timer = 0;
 }
 else if(room==rm_end){
-	current_bgm = mus_title;
+	current_bgm = mus_end;
 	timer = 0;
 }
 }

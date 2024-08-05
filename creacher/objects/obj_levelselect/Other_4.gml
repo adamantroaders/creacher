@@ -1,5 +1,5 @@
 if(!first){
-if(room==title){
+if(room==rm_title){
 x = truex;
 finalx = x;
 obj_shift.pause = false;

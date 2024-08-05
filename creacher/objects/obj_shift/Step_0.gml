@@ -42,23 +42,51 @@ if(swaptimer==0){
 		obj_creacher.image_index = temp_img_ind;
 		
 		if(instance_exists(obj_friend)&&instance_nearest(0,0,obj_friend).image_index<1){
-			if(!instance_nearest(0,0,obj_friend).snail&&!instance_nearest(0,0,obj_friend).guard){
-			instance_nearest(0,0,obj_friend).sprite_index = spr_friend_trans;
+			temp = instance_nearest(0,0,obj_friend);
+			if(!temp.snail&&!temp.guard){
+			temp.sprite_index = spr_friend_trans;
 			}
 		}
 		if(instance_exists(obj_friend)&&instance_nearest(0,room_height,obj_friend).image_index<1){
-			if(!instance_nearest(0,room_height,obj_friend).snail&&!instance_nearest(0,room_height,obj_friend).guard){
-			instance_nearest(0,room_height,obj_friend).sprite_index = spr_friend_trans;
+			temp = instance_nearest(0,room_height,obj_friend);
+			if(!temp.snail&&!temp.guard){
+			temp.sprite_index = spr_friend_trans;
 			}
 		}
 		if(instance_exists(obj_friend)&&instance_nearest(room_width,0,obj_friend).image_index<1){
-			if(!instance_nearest(room_width,0,obj_friend).snail&&!instance_nearest(room_width,0,obj_friend).guard){
-			instance_nearest(room_width,0,obj_friend).sprite_index = spr_friend_trans;
+			temp = instance_nearest(room_width,0,obj_friend);
+			if(!temp.snail&&!temp.guard){
+			temp.sprite_index = spr_friend_trans;
 			}
 		}
 		if(instance_exists(obj_friend)&&instance_nearest(room_width,room_height,obj_friend).image_index<1){
-			if(!instance_nearest(room_width,room_height,obj_friend).snail&&!instance_nearest(room_width,room_height,obj_friend).guard){
-			instance_nearest(room_width,room_height,obj_friend).sprite_index = spr_friend_trans;
+			temp = instance_nearest(room_width,room_height,obj_friend);
+			if(!temp.snail&&!temp.guard){
+			temp.sprite_index = spr_friend_trans;
+			}
+		}
+		if(instance_exists(obj_friend)&&instance_nearest(room_width/2,room_height*0.7,obj_friend).image_index<1){
+			temp = instance_nearest(room_width/2,room_height*0.7,obj_friend);
+			if(!temp.snail&&!temp.guard){
+			temp.sprite_index = spr_friend_trans;
+			}
+		}
+		if(instance_exists(obj_friend)&&instance_nearest(room_width*0.6,room_height*0.7,obj_friend).image_index<1){
+			temp = instance_nearest(room_width*0.6,room_height*0.7,obj_friend);
+			if(!temp.snail&&!temp.guard){
+			temp.sprite_index = spr_friend_trans;
+			}
+		}
+		if(instance_exists(obj_friend)&&instance_nearest(room_width*0.67,room_height*0.7,obj_friend).image_index<1){
+			temp = instance_nearest(room_width*0.67,room_height*0.7,obj_friend);
+			if(!temp.snail&&!temp.guard){
+			temp.sprite_index = spr_friend_trans;
+			}
+		}
+		if(instance_exists(obj_friend)&&instance_nearest(room_width*0.75,room_height*0.7,obj_friend).image_index<1){
+			temp = instance_nearest(room_width*0.75,room_height*0.7,obj_friend);
+			if(!temp.snail&&!temp.guard){
+			temp.sprite_index = spr_friend_trans;
 			}
 		}
 	}
@@ -76,23 +104,51 @@ if(swaptimer==0){
 		obj_girl.image_speed = 0;
 		obj_girl.sprite_index = spr_girl;
 		if(instance_exists(obj_friend)&&instance_nearest(0,0,obj_friend).image_index<1){
-			if(!instance_nearest(0,0,obj_friend).snail){
-				instance_nearest(0,0,obj_friend).sprite_index = spr_friend;
+			tempy = instance_nearest(0,0,obj_friend);
+			if(!tempy.snail){
+				tempy.sprite_index = spr_friend;
 			}
 		}
 		if(instance_exists(obj_friend)&&instance_nearest(room_width,0,obj_friend).image_index<1){
-			if(!instance_nearest(room_width,0,obj_friend).snail){
-				instance_nearest(room_width,0,obj_friend).sprite_index = spr_friend;
+			tempy = instance_nearest(room_width,0,obj_friend);
+			if(!tempy.snail){
+				tempy.sprite_index = spr_friend;
 			}
 		}
 		if(instance_exists(obj_friend)&&instance_nearest(0,room_height,obj_friend).image_index<1){
-			if(!instance_nearest(0,room_height,obj_friend).snail){
-				instance_nearest(0,room_height,obj_friend).sprite_index = spr_friend;
+			tempy = instance_nearest(0,room_height,obj_friend);
+			if(!tempy.snail){
+				tempy.sprite_index = spr_friend;
 			}
 		}
 		if(instance_exists(obj_friend)&&instance_nearest(room_width,room_height,obj_friend).image_index<1){
-			if(!instance_nearest(room_width,room_height,obj_friend).snail){
-				instance_nearest(room_width,room_height,obj_friend).sprite_index = spr_friend;
+			tempy = instance_nearest(room_width,room_height,obj_friend);
+			if(!tempy.snail){
+				tempy.sprite_index = spr_friend;
+			}
+		}
+		if(instance_exists(obj_friend)&&instance_nearest(room_width/2,room_height*0.7,obj_friend).image_index<1){
+			tempy = instance_nearest(room_width/2,room_height*0.7,obj_friend)
+			if(!tempy.snail){
+				tempy.sprite_index = spr_friend;
+			}
+		}
+		if(instance_exists(obj_friend)&&instance_nearest(room_width*0.6,room_height*0.7,obj_friend).image_index<1){
+			tempy = instance_nearest(room_width*0.6,room_height*0.7,obj_friend)
+			if(!tempy.snail){
+				tempy.sprite_index = spr_friend;
+			}
+		}
+		if(instance_exists(obj_friend)&&instance_nearest(room_width*0.67,room_height*0.7,obj_friend).image_index<1){
+			tempy = instance_nearest(room_width*0.67,room_height*0.7,obj_friend)
+			if(!tempy.snail){
+				tempy.sprite_index = spr_friend;
+			}
+		}
+		if(instance_exists(obj_friend)&&instance_nearest(room_width*0.75,room_height*0.7,obj_friend).image_index<1){
+			tempy = instance_nearest(room_width*0.75,room_height*0.7,obj_friend)
+			if(!tempy.snail){
+				tempy.sprite_index = spr_friend;
 			}
 		}
 	}
@@ -242,7 +298,7 @@ if(reset_timer==0){
 }
 if(realreset_timer==0){
 	nexttarget = room;
-	room = title;
+	room = rm_title;
 }
 
 if(realshift_timer==33){
@@ -252,11 +308,11 @@ if(realshift_timer==33){
 	}
 }
 
-if((room==target||(room==nexttarget&&nexttarget!=title)) && image_index==1 && image_speed==-1){
+if((room==target||(room==nexttarget&&nexttarget!=rm_title)) && image_index==1 && image_speed==-1){
 	image_speed = 0;
 	image_index = 0;
-	target = title;
-	nexttarget = title;
+	target = rm_title;
+	nexttarget = rm_title;
 	if(instance_exists(obj_girl)){
 		obj_girl.canmove = true;
 	}
@@ -272,7 +328,7 @@ if(realshift_timer>0){
 if(realshift_timer==0){
 	realshift_timer = -15;
 }
-if(resetti||keyboard_check_pressed(ord("R")))&&room!=title&&room!=rm_end
+if(resetti||keyboard_check_pressed(ord("R")))&&room!=rm_title&&room!=rm_end
 {
 	resetti = false;
 	if(image_speed==0){
@@ -332,10 +388,13 @@ if(resetti||keyboard_check_pressed(ord("R")))&&room!=title&&room!=rm_end
 	if(room==Room18_shadow){
 		nexttarget = Room18;
 	}
+	if(room==rm_test_shadow){
+		nexttarget = rm_test;
+	}
 	char = "none";
 	lastchar = "creacher";
 	obj_girl.canmove = false;
-	target = title;
+	target = rm_title;
 	shift = true;
 	shift2 = true;
 	maybeweird = true;
@@ -462,6 +521,12 @@ if(starttimer==0){
 	if(room==Room18_shadow){
 		target_room = Room18;
 	}
+	if(room==rm_test){
+		target_room = rm_test_shadow;	
+	}
+	if(room==rm_test_shadow){
+		target_room = rm_test;
+	}
 	
 	
 }
@@ -484,12 +549,12 @@ else if(!pause&&keyboard_check_pressed(vk_escape)&&image_speed==0&&instance_exis
 }
 
 if(obj_returnbutton.ret){
-	target = title;
+	target = rm_title;
 	nexttarget = target;
 	char = "none";
 	lastchar = "creacher";
 	obj_girl.canmove = false;
-	target = title;
+	target = rm_title;
 	shift = true;
 	shift2 = true;
 	maybeweird = true;

@@ -4,12 +4,13 @@ y_spd = keyboard_check(ord("S")) - keyboard_check(ord("W"));
 
 //wall
 if(!sliding&&place_meeting(x+x_spd, y , WALL)&&!(instance_place(x+x_spd, y , WALL).friend&&instance_place(x+x_spd, y , WALL).guard&&!instance_place(x+x_spd, y, WALL).pushable)){
-
+	
     var _pixelCheck = sign(x_spd);
     while (!place_meeting(x + _pixelCheck,y,WALL)){
         x+=_pixelCheck;
     }
     x_spd=0;
+	
 }
 
 if (!sliding&&place_meeting( x , y +y_spd, WALL)&&!(instance_place(x, y + y_spd , WALL).friend&&instance_place(x, y + y_spd , WALL).guard&&!instance_place(x, y+y_spd, WALL).pushable)){
@@ -183,9 +184,9 @@ if(obj_shift.persistify){
 else{
 	persistent = false;
 }
-if(instance_exists(obj_girl_ctscn2)){
-if(!obj_girl_ctscn2.first){
-	if(x<0||x>room_width){
+if !instance_exists(obj_girl_ctscn2)||(instance_exists(obj_girl_ctscn2)&&!obj_girl_ctscn2.first){
+//if(!obj_girl_ctscn2.first){
+if(x<0||x>room_width){
 	x = lastx;
 	fix = true;
 }
@@ -207,7 +208,7 @@ else if(y>lasty+64||y<lasty-64){
 else{
 	lasty = y;
 }
-}
+
 }
 if(!room==Room18){
 if(x<0||x>room_width){

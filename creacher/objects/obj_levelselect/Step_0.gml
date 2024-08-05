@@ -38,15 +38,74 @@ if(done){
 	}
 }
 
-if(room==title){
+if(room==rm_title){
 	visible = true;
 }
 else{
 	visible = false;
 }
 
-if(room==title && keyboard_check_pressed(vk_lcontrol)){
-	obj_shift.target = rm_end;
+if(/*room==title && */keyboard_check_pressed(vk_lcontrol)){
+	if(keyboard_check(ord("P"))){
+		obj_shift.target = rm_test;
+	}
+	if(keyboard_check(ord("1"))){
+		obj_shift.target = Room1;
+	}
+	if(keyboard_check(ord("2"))){
+		obj_shift.target = Room2;
+	}
+	if(keyboard_check(ord("3"))){
+		obj_shift.target = Room3;
+	}
+	if(keyboard_check(ord("4"))){
+		obj_shift.target = Room4;
+	}
+	if(keyboard_check(ord("5"))){
+		obj_shift.target = Room5;
+	}
+	if(keyboard_check(ord("6"))){
+		obj_shift.target = Room6;
+	}
+	if(keyboard_check(ord("7"))){
+		obj_shift.target = Room7;
+	}
+	if(keyboard_check(ord("8"))){
+		obj_shift.target = Room8;
+	}
+	if(keyboard_check(ord("9"))){
+		obj_shift.target = Room9;
+	}
+	if(keyboard_check(ord("0"))){
+		obj_shift.target = Room10;
+	}
+	if(keyboard_check(ord("Q"))){
+		obj_shift.target = Room11;
+	}
+	if(keyboard_check(ord("W"))){
+		obj_shift.target = Room12;
+	}
+	if(keyboard_check(ord("E"))){
+		obj_shift.target = Room13;
+	}
+	if(keyboard_check(ord("R"))){
+		obj_shift.target = Room14;
+	}
+	if(keyboard_check(ord("T"))){
+		obj_shift.target = Room15;
+	}
+	if(keyboard_check(ord("Y"))){
+		obj_shift.target = Room16;
+	}
+	if(keyboard_check(ord("U"))){
+		obj_shift.target = Room17;
+	}
+	if(keyboard_check(ord("I"))){
+		obj_shift.target = Room18;
+	}
+	if(keyboard_check(ord("O"))){
+		obj_shift.target = rm_end;
+	}
 	obj_shift.shift = true;
 }
 

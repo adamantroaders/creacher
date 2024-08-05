@@ -1,4 +1,4 @@
-if(obj_shift.pause && room!=title){
+if(obj_shift.pause && room!=rm_title){
 	visible = true;
 }
 else{

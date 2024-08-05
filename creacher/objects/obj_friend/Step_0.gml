@@ -62,3 +62,16 @@ if(pushable){
 	sprite_index = spr_friend;
 	image_index = 20;
 }
+
+if(!image_index>0){
+	if(room==Room1||room==Room2||room==Room3||room==Room4||room==Room5||room==Room6||room==Room7||room==Room8||room==Room9||room==Room10||room==Room11||room==Room12||room==Room13||room==Room14||room==Room15||room==Room16||room==Room17||room==Room18){
+		sprite_index = spr_friend;
+	}
+	else{
+		sprite_index = spr_friend_trans;
+	}
+	
+	
+	
+	
+}

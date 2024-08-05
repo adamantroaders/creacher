@@ -1,7 +1,7 @@
 {
   "$GMSprite":"",
   "%Name":"spr_creacher_1",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":127,
   "bbox_left":0,
   "bbox_right":127,
