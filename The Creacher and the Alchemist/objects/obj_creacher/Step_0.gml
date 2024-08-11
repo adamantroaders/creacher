@@ -210,7 +210,7 @@ else{
 }
 
 }
-if(!room==Room18){
+if(!room==Room18||!obj_buttonred.pressed){
 if(x<0||x>room_width){
 	x = lastx;
 	fix = true;

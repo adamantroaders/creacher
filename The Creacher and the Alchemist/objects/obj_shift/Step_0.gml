@@ -25,7 +25,9 @@ if(swaptimer==0){
 	swaptimer = -15;
 	if(room==Room18&&!obj_girl_ctscn2.first){
 		obj_creacher.x = 720;
+		obj_creacher.lastx = 720;
 		obj_creacher.y = 1296;
+		obj_creacher.lasty = 1296;
 	}
 	
 	

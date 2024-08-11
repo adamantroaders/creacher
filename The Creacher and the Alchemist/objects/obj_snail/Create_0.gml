@@ -16,5 +16,6 @@ snail = true;
 friend = true;
 guard = false;
 
-xmin = x-128;
+xmin = x-120;
 xmax = x;
+maxdist = xmax - xmin;
