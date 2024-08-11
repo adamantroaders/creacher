@@ -106,11 +106,16 @@ if(/*room==title && */keyboard_check_pressed(vk_lcontrol)){
 	if(keyboard_check(ord("O"))){
 		obj_shift.target = rm_end;
 	}
+	if(keyboard_check(ord("P"))){
+		obj_shift.target = rm_intro;
+	}
 	obj_shift.shift = true;
 }
 
 if(girlmovetimer==0){
+	if(instance_exists(obj_girl)){
 	obj_girl.canmove = true;
+	}
 	girlmovetimer = -15;
 }
 if(girlmovetimer>0){
@@ -216,6 +221,18 @@ if(lvl==17){
 if(lvl==18){
 	target = Room18;
 	if(room==target){
+		open = true;
+	}
+}
+
+if(filetimer>0){
+filetimer--;
+}
+
+if(filetimer==0){
+	filetimer = -15;
+	lroom = obj_datasave.lastlvl;
+	if(lroom>=lvl){
 		open = true;
 	}
 }

@@ -1,0 +1,23 @@
+char = "girl";
+persistify = false;
+swaptimer = -15;
+image_speed = 0;
+depth = -999999;
+target_room = Room1_shadow;
+target = Room1;
+lastchar = "girl";
+shift_timer = -15;
+realshift_timer = -15;
+shift = false;
+nexttarget = rm_title;
+shift2 = false;
+reset_timer = -55;
+maybeweird = false;
+starttimer = 30;
+pause = false;
+resetti = false;
+realreset_timer = -15;
+finalshift = false;
+ending = false;
+
+fast = false;

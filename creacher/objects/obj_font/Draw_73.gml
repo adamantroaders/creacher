@@ -1,2 +1,0 @@
-x = firstx;
-y+=ychange;

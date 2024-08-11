@@ -1,0 +1,9 @@
+first = true;
+first2 = true;
+image_speed = 3;
+timer = -15;
+x_spd = 0;
+y_spd = 0;
+donewalking = -15;
+donehugging = false;
+realness = false;
