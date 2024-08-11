@@ -15,3 +15,6 @@ facing = "left";
 snail = true;
 friend = true;
 guard = false;
+
+xmin = x-128;
+xmax = x;

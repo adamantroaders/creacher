@@ -102,7 +102,7 @@ if(pushable){
 }
 
 if(sprite_index==spr_snail_left||sprite_index==spr_snail_right){
-	if(snailtimer==0){
+	if(snailtimer<=0){
 		snailtimer = 60;
 		if(sprite_index==spr_snail_left){
 			sprite_index = spr_snail_right;
@@ -116,16 +116,56 @@ if(sprite_index==spr_snail_left||sprite_index==spr_snail_right){
 		if(sprite_index==spr_snail_left){
 			image_speed = 1;
 			x-=2;
-			if(place_meeting(x-2,y,WALL)||place_meeting(x-2,y,obj_creacher)||place_meeting(x-2,y,obj_girl)){
+			if(room!=Room16&&room!=Room16_shadow&&(place_meeting(x-2,y,WALL)||place_meeting(x-2,y,obj_creacher)||place_meeting(x-2,y,obj_girl))){
 				snailtimer = 0;
+			}
+			if((room==Room16||room==Room16_shadow)&&(place_meeting(x-2,y,obj_creacher)||place_meeting(x-2,y,obj_girl))){
+				x+=2;
+				snailtimer++;
+				if(!place_meeting(x-1,y,obj_creacher)&&!place_meeting(x-1,y,obj_girl)){
+					x-=1;
+				}
 			}
 		}
 		else{
 			image_speed = 1;
 			x+=2;
-			if(place_meeting(x+2,y,WALL)||place_meeting(x+2,y,obj_creacher)||place_meeting(x+2,y,obj_girl)){
+			if(room!=Room16&&room!=Room16_shadow&&(place_meeting(x+2,y,WALL)||place_meeting(x+2,y,obj_creacher)||place_meeting(x+2,y,obj_girl))){
 				snailtimer = 0;
 			}
+			if((room==Room16||room==Room16_shadow)&&(place_meeting(x+2,y,obj_creacher)||place_meeting(x+2,y,obj_girl))){
+				x-=2;
+				snailtimer++;
+				if(!place_meeting(x+1,y,obj_creacher)&&!place_meeting(x+1,y,obj_girl)){
+					x+=1;
+				}
+			}
+		}
+	}
+	if((room==Room16||room==Room16_shadow)&&(place_meeting(x+4,y,obj_creacher)||place_meeting(x+4,y,obj_girl)||place_meeting(x-4,y,obj_creacher)||place_meeting(x-4,y,obj_girl))){
+		if(place_meeting(x+8,y,obj_creacher)){
+			obj_creacher.x+=4;
+			snailtimer-=0.5;
+		}
+		if(place_meeting(x-8,y,obj_creacher)){
+			obj_creacher.x-=4;
+			snailtimer-=0.5;
+		}
+		if(place_meeting(x+8,y,obj_girl)){
+			obj_girl.x+=4;
+			snailtimer-=0.5;
+		}
+		if(place_meeting(x-8,y,obj_girl)){
+			obj_girl.x-=4;
+			snailtimer-=0.5;
+		}
+	}
+	if(room==Room16||room==Room16_shadow){
+		if(sprite_index==spr_snail_left&&x<xmin){
+			snailtimer = 0;
+		}
+		if(sprite_index==spr_snail_right&&x>xmax){
+			snailtimer = 0;
 		}
 	}
 }
