@@ -2,19 +2,19 @@ if(obj_shift.char=="girl"){
 x_spd = keyboard_check(ord("D")) - keyboard_check(ord("A"));
 y_spd = keyboard_check(ord("S")) - keyboard_check(ord("W"));
 
-if(sprite_index!=spr_girl_transform&&(place_meeting(x+x_spd, y , WALL)||place_meeting(x+x_spd, y , obj_block))){
+if(sprite_index!=spr_girl_transform&&(place_meeting(x+x_spd, y , WALL)||place_meeting(x+x_spd, y , obj_guard))){
 
     var _pixelCheck = sign(x_spd);
-    while (!place_meeting(x + _pixelCheck,y,WALL)&&!place_meeting(x + _pixelCheck,y,obj_block)){
+    while (!place_meeting(x + _pixelCheck,y,WALL)&&!place_meeting(x + _pixelCheck,y,obj_guard)){
         x+=_pixelCheck;
     }
 
     x_spd=0;
 }
 
-if (sprite_index!=spr_girl_transform&&(place_meeting( x, y +y_spd, WALL)||place_meeting( x, y +y_spd, obj_block))){
+if (sprite_index!=spr_girl_transform&&(place_meeting( x, y +y_spd, WALL)||place_meeting( x, y +y_spd, obj_guard))){
     var _pixelCheck = sign(y_spd);
-    while (!place_meeting(x, y+_pixelCheck,WALL)&&!place_meeting(x, y+_pixelCheck,obj_block)){
+    while (!place_meeting(x, y+_pixelCheck,WALL)&&!place_meeting(x, y+_pixelCheck,obj_guard)){
         y+=_pixelCheck;
     }
 
@@ -42,7 +42,7 @@ if(keyboard_check(vk_space)&&anim_timer<0){
 	depth = -99;
 }
 
-	while(place_meeting(x,y,WALL)&&sprite_index!=spr_girl_transform){
+	while((place_meeting(x,y,WALL)||place_meeting(x,y,obj_guard))&&sprite_index!=spr_girl_transform){
 		var getouttahere = round(random_range(-1,1));
 		y+=getouttahere;
 		x+=getouttahere;

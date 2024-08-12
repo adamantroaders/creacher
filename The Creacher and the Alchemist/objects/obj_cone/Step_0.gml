@@ -34,7 +34,7 @@ if(!obj_shift.resetti&&instance_exists(obj_girl)&&place_meeting(x,y,obj_girl)&&o
 
 
 image_index = 0;
-while(place_meeting(x,y,WALL)&&image_index<8){
+while(place_meeting(x,y,WALL)||(place_meeting(x,y,obj_guard)))&&image_index<8{
 	image_index++;
 }
 if(image_index>=6&&stoptimer==-15){

@@ -1,23 +1,45 @@
 if(obj_shift.char=="creacher"){
 x_spd = keyboard_check(ord("D")) - keyboard_check(ord("A"));
 y_spd = keyboard_check(ord("S")) - keyboard_check(ord("W"));
+if(x_spd!=0)
+xs = x_spd;
+if(y_spd!=0)
+ys = y_spd;
 
 //wall
-if(!sliding&&place_meeting(x+x_spd, y , WALL)&&!(instance_place(x+x_spd, y , WALL).friend&&instance_place(x+x_spd, y , WALL).guard&&!instance_place(x+x_spd, y, WALL).pushable)){
+if(!sliding&&place_meeting(x+x_spd, y , WALL)&&!(instance_place(x+x_spd, y , WALL).friend&&!instance_place(x+x_spd, y, WALL).pushable)){
 	
     var _pixelCheck = sign(x_spd);
     while (!place_meeting(x + _pixelCheck,y,WALL)){
         x+=_pixelCheck;
     }
+	
     x_spd=0;
 	
 }
 
-if (!sliding&&place_meeting( x , y +y_spd, WALL)&&!(instance_place(x, y + y_spd , WALL).friend&&instance_place(x, y + y_spd , WALL).guard&&!instance_place(x, y+y_spd, WALL).pushable)){
+if(!sliding&&place_meeting(x+xs,y,obj_guard)&&instance_place(x+xs, y, obj_guard).pushable){
+	var _pixelCheck = sign(xs);
+	while!(place_meeting(x+_pixelCheck,y,obj_guard)&&instance_place(x+_pixelCheck,y,obj_guard).pushable){
+		x+=_pixelCheck;
+	}
+    x_spd=0;
+}
+
+if (!sliding&&place_meeting( x , y +y_spd, WALL)&&!(instance_place(x, y + y_spd , WALL).friend&&!instance_place(x, y+y_spd, WALL).pushable)){
     var _pixelCheck = sign(y_spd);
-    while (!place_meeting(x , y+_pixelCheck,WALL)){
+    while (!place_meeting(x , y+_pixelCheck,WALL)&&!place_meeting(x , y+_pixelCheck,obj_guard)){
         y+=_pixelCheck;
     }
+    y_spd=0;
+}
+
+if(!sliding&&place_meeting(x,y+ys,obj_guard)&&instance_place(x, y+ys, obj_guard).pushable){
+	var _pixelCheck = sign(ys);
+    
+	while!(place_meeting(x,y+_pixelCheck,obj_guard)&&instance_place(x,y+_pixelCheck,obj_guard).pushable){
+		y+=_pixelCheck;
+	}
     y_spd=0;
 }
 
@@ -116,25 +138,25 @@ if(sliding){
 	}
 	if(dir=="up"){
 		y-=8;
-		if(place_meeting(x,y-8,WALL)&&!instance_place(x,y-8,WALL).glass){
+		if(place_meeting(x,y-8,WALL)&&!instance_place(x,y-8,WALL).glass)||place_meeting(x,y-8,obj_guard){
 			slide_timer = 0;
 		}
 	}
 	if(dir=="down"){
 		y+=8;
-		if(place_meeting(x,y+8,WALL)&&!instance_place(x,y+8,WALL).glass){
+		if(place_meeting(x,y+8,WALL)&&!instance_place(x,y+8,WALL).glass)||place_meeting(x,y+8,obj_guard){
 			slide_timer = 0;
 		}
 	}
 	if(dir=="left"){
 		x-=8;
-		if(place_meeting(x-8,y,WALL)&&!instance_place(x-8,y,WALL).glass){
+		if(place_meeting(x-8,y,WALL)&&!instance_place(x-8,y,WALL).glass)||place_meeting(x-8,y,obj_guard){
 			slide_timer = 0;
 		}
 	}
 	if(dir=="right"){
 		x+=8;
-		if(place_meeting(x+8,y,WALL)&&!instance_place(x+8,y,WALL).glass){
+		if(place_meeting(x+8,y,WALL)&&!instance_place(x+8,y,WALL).glass)||place_meeting(x+8,y,obj_guard){
 			slide_timer = 0;
 		}
 	}
@@ -160,11 +182,17 @@ x+=x_spd*x_movespd;
 y+=y_spd*y_movespd;
 
 
-	while(place_meeting(x,y,WALL)&&!(instance_place(x, y, WALL).friend&&instance_place(x, y, WALL).guard&&!instance_place(x, y, WALL).pushable)){
+	while(place_meeting(x,y,WALL)&&!instance_place(x, y, WALL).pushable){
 		var getouttahere = round(random_range(-1,1));
 		y+=getouttahere;
 		x+=getouttahere;
 	}
+	while(place_meeting(x,y,obj_guard)&&instance_place(x, y, obj_guard).pushable){
+		var getouttahere = round(random_range(-1,1));
+		y+=getouttahere;
+		x+=getouttahere;
+	}
+	
 }
 }
 
