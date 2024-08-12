@@ -1,7 +1,8 @@
-xmin = x-32;
-xmax = x+32;
-ymin = y-32;
-ymax = y+32;
+xmin = x-17;
+xmax = x+17;
+ymin = y-17;
+ymax = y+17;
 mvmt = "updown";
 friend = false;
 pushable = false;
+glass = true;

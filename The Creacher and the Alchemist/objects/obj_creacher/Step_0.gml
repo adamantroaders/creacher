@@ -116,15 +116,27 @@ if(sliding){
 	}
 	if(dir=="up"){
 		y-=8;
+		if(place_meeting(x,y-8,WALL)&&!instance_place(x,y-8,WALL).glass){
+			slide_timer = 0;
+		}
 	}
 	if(dir=="down"){
 		y+=8;
+		if(place_meeting(x,y+8,WALL)&&!instance_place(x,y+8,WALL).glass){
+			slide_timer = 0;
+		}
 	}
 	if(dir=="left"){
 		x-=8;
+		if(place_meeting(x-8,y,WALL)&&!instance_place(x-8,y,WALL).glass){
+			slide_timer = 0;
+		}
 	}
 	if(dir=="right"){
 		x+=8;
+		if(place_meeting(x+8,y,WALL)&&!instance_place(x+8,y,WALL).glass){
+			slide_timer = 0;
+		}
 	}
 	obj_girl.canmove = false;
 }
@@ -210,7 +222,7 @@ else{
 }
 
 }
-if(!room==Room18||!obj_buttonred.pressed){
+if(!room==Room18||(instance_exists(obj_buttonred)&&!obj_buttonred.pressed)){
 if(x<0||x>room_width){
 	x = lastx;
 	fix = true;
