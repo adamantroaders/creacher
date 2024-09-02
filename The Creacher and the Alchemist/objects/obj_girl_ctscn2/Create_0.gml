@@ -7,3 +7,4 @@ y_spd = 0;
 donewalking = -15;
 donehugging = false;
 realness = false;
+gottagoleft = false;

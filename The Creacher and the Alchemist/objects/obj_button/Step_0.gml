@@ -1,19 +1,19 @@
-if(place_meeting(x+5,y,obj_block)){
+if(place_meeting(x+5,y,obj_block))||place_meeting(x+5,y,obj_guard){
 	if(image_index==0||image_index==1){
 		image_speed = 1;
 	}
 }
-else if(place_meeting(x-5,y,obj_block)){
+else if(place_meeting(x-5,y,obj_block))||(place_meeting(x-5,y,obj_guard)){
 	if(image_index==0||image_index==1){
 		image_speed = 1;
 	}
 }
-else if(place_meeting(x,y,obj_block)){
+else if(place_meeting(x,y,obj_block))||(place_meeting(x,y,obj_guard)){
 	if(image_index==0||image_index==1){
 		image_speed = 1;
 	}
 }
-else if(place_meeting(x,y,obj_block)){
+else if(place_meeting(x,y,obj_block))||(place_meeting(x,y,obj_guard)){
 	if(image_index==0||image_index==1){
 		image_speed = 1;
 	}

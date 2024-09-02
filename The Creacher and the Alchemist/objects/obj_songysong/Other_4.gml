@@ -28,7 +28,7 @@ else if(room==rm_end){
 	if(playing==mus_sad){
 		audio_stop_sound(playing);
 	}
-	current_bgm = mus_end;
+	current_bgm = mus_end_oldmix;
 	timer = 5;
 }
 }

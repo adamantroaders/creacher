@@ -1,28 +1,29 @@
-if(obj_shift.char=="creacher"&&pushable&&keyboard_check_pressed(vk_space)&&timer==-15){
+if(obj_shift.char=="creacher"&&pushable&&keyboard_check_pressed(vk_space)&&timer<=-15){
 	if((obj_creacher.x-x)<-127&&(obj_creacher.x-x)>-160&&abs(obj_creacher.y-y)<64){
-		if(!place_meeting(x+2,y,WALL)&&!place_meeting(x+2,y,BABYWALL)&&!place_meeting(x+2,y,obj_block)){
+		if(!place_meeting(x+2,y,WALL)&&!place_meeting(x+2,y,obj_guard)&&!place_meeting(x+2,y,obj_block)){
 			dir = "right";
 			timer = 2;
 		}
 	}
 	if((obj_creacher.x-x)>127&&(obj_creacher.x-x)<160&&abs(obj_creacher.y-y)<64){
-		if(!place_meeting(x-2,y,WALL)&&!place_meeting(x-2,y,BABYWALL)&&!place_meeting(x-2,y,obj_block)){
+		if(!place_meeting(x-2,y,WALL)&&!place_meeting(x-2,y,obj_guard)&&!place_meeting(x-2,y,obj_block)){
 			dir = "left";
 			timer = 2;
 		}
 	}
 	if((obj_creacher.y-y)<-113&&(obj_creacher.y-y)>-174&&abs(obj_creacher.x-x)<64){
-		if(!place_meeting(x,y+2,WALL)&&!place_meeting(x,y+2,BABYWALL)&&!place_meeting(x,y+2,obj_block)){
+		if(!place_meeting(x,y+2,WALL)&&!place_meeting(x,y+2,obj_guard)&&!place_meeting(x,y+2,obj_block)){
 			dir = "down";
 			timer = 2;
 		}
 	}
 	if((obj_creacher.y-y)>127&&(obj_creacher.y-y)<160&&abs(obj_creacher.x-x)<64){
-		if(!place_meeting(x,y-2,WALL)&&!place_meeting(x,y-2,BABYWALL)&&!place_meeting(x,y-2,obj_block)){
+		if(!place_meeting(x,y-2,WALL)&&!place_meeting(x,y-2,obj_guard)&&!place_meeting(x,y-2,obj_block)){
 			dir = "up";
 			timer = 2;
 		}
 	}
+	obj_girl.snailmoved = true;
 }
 else{
 	dir = "none";
@@ -31,52 +32,199 @@ if(dir!="none"){
 	mvng = dir;
 }
 if(mvng=="right"){
-	if(!place_meeting(x+8,y,WALL)&&!place_meeting(x+8,y,BABYWALL)&&!place_meeting(x+8,y,obj_block)){
+	if(!place_meeting(x+8,y,WALL)&&!place_meeting(x+8,y,obj_guard)&&!place_meeting(x+8,y,obj_block)){
 	x+=8;
 	}
-	else if(!place_meeting(x+2,y,WALL)&&!place_meeting(x+2,y,BABYWALL)&&!place_meeting(x+2,y,obj_block)){
+	else if(!place_meeting(x+2,y,WALL)&&!place_meeting(x+2,y,obj_guard)&&!place_meeting(x+2,y,obj_block)){
 	x+=2;
 	}
 	else{
 		timer = 0;
 	}
+	
+	if(x%32==0&&y%32==0){
+		var goox1 = round(x/8)*8 - 64;
+		var gooy1 = round(y/8)*8 - 64;
+		var goox2 = round(x/8)*8 - 32;
+		var gooy2 = round(y/8)*8 - 32;
+		var goox3 = round(x/8)*8;
+		var gooy3 = round(y/8)*8;
+		var goox4 = round(x/8)*8 + 32;
+		var gooy4 = round(y/8)*8 + 32;
+		for(i = 1; i<=4; i++){
+			if(i==1)
+				gx = goox1;
+			if(i==2)
+				gx = goox2;
+			if(i==3)
+				gx = goox3;
+			if(i==4)
+				gx = goox4;
+			for(j = 1; j<=4; j++){
+				if(j==1)
+					gy = gooy1;
+				if(j==2)
+					gy = gooy2;
+				if(j==3)
+					gy = gooy3;
+				if(j==4)
+					gy = gooy4;
+				
+				
+				if(random_range(1,8)>5.5){
+					instance_create_depth(gx,gy,190,obj_goo);
+				}
+			}
+		}
+	}
 }
 if(mvng=="left"){
-	if(!place_meeting(x-8,y,WALL)&&!place_meeting(x-8,y,BABYWALL)&&!place_meeting(x-8,y,obj_block)){
+	if(!place_meeting(x-8,y,WALL)&&!place_meeting(x-8,y,obj_guard)&&!place_meeting(x-8,y,obj_block)){
 	x-=8;
 	}
 	else 
-	if(!place_meeting(x-2,y,WALL)&&!place_meeting(x-2,y,BABYWALL)&&!place_meeting(x-2,y,obj_block)){
+	if(!place_meeting(x-2,y,WALL)&&!place_meeting(x-2,y,obj_guard)&&!place_meeting(x-2,y,obj_block)){
 	x-=2;
 	}
 	else{
 		timer = 0;
 	}
+	
+	if(x%32==0&&y%32==0){
+		var goox1 = round(x/8)*8 - 64;
+		var gooy1 = round(y/8)*8 - 64;
+		var goox2 = round(x/8)*8 - 32;
+		var gooy2 = round(y/8)*8 - 32;
+		var goox3 = round(x/8)*8;
+		var gooy3 = round(y/8)*8;
+		var goox4 = round(x/8)*8 + 32;
+		var gooy4 = round(y/8)*8 + 32;
+		for(i = 1; i<=4; i++){
+			if(i==1)
+				gx = goox1;
+			if(i==2)
+				gx = goox2;
+			if(i==3)
+				gx = goox3;
+			if(i==4)
+				gx = goox4;
+			for(j = 1; j<=4; j++){
+				if(j==1)
+					gy = gooy1;
+				if(j==2)
+					gy = gooy2;
+				if(j==3)
+					gy = gooy3;
+				if(j==4)
+					gy = gooy4;
+				
+				
+				if(random_range(1,8)>5.5){
+					instance_create_depth(gx,gy,190,obj_goo);
+				}
+			}
+		}
+	}
 }
 if(mvng=="down"){
-	if(!place_meeting(x,y+8,WALL)&&!place_meeting(x,y+8,BABYWALL)&&!place_meeting(x,y+8,obj_block)){
+	if(!place_meeting(x,y+8,WALL)&&!place_meeting(x,y+8,obj_guard)&&!place_meeting(x,y+8,obj_block)){
 	y+=8;
 	}
-	else if(!place_meeting(x,y+2,WALL)&&!place_meeting(x,y+2,BABYWALL)&&!place_meeting(x,y+2,obj_block)){
+	else if(!place_meeting(x,y+2,WALL)&&!place_meeting(x,y+2,obj_guard)&&!place_meeting(x,y+2,obj_block)){
 	y+=2;
 	}
 	else{
 		timer = 0;
 	}
+	
+	if(x%32==0&&y%32==0){
+		var goox1 = round(x/8)*8 - 64;
+		var gooy1 = round(y/8)*8 - 64;
+		var goox2 = round(x/8)*8 - 32;
+		var gooy2 = round(y/8)*8 - 32;
+		var goox3 = round(x/8)*8;
+		var gooy3 = round(y/8)*8;
+		var goox4 = round(x/8)*8 + 32;
+		var gooy4 = round(y/8)*8 + 32;
+		for(i = 1; i<=4; i++){
+			if(i==1)
+				gx = goox1;
+			if(i==2)
+				gx = goox2;
+			if(i==3)
+				gx = goox3;
+			if(i==4)
+				gx = goox4;
+			for(j = 1; j<=4; j++){
+				if(j==1)
+					gy = gooy1;
+				if(j==2)
+					gy = gooy2;
+				if(j==3)
+					gy = gooy3;
+				if(j==4)
+					gy = gooy4;
+				
+				
+				if(random_range(1,8)>5.5){
+					instance_create_depth(gx,gy,190,obj_goo);
+				}
+			}
+		}
+	}
 }
 if(mvng=="up"){
-	if(!place_meeting(x,y-8,WALL)&&!place_meeting(x,y-8,BABYWALL)&&!place_meeting(x,y-8,obj_block)){
+	if(!place_meeting(x,y-8,WALL)&&!place_meeting(x,y-8,obj_guard)&&!place_meeting(x,y-8,obj_block)){
 	y-=8;
 	}
-	else if(!place_meeting(x,y-2,WALL)&&!place_meeting(x,y-2,BABYWALL)&&!place_meeting(x,y-2,obj_block)){
+	else if(!place_meeting(x,y-2,WALL)&&!place_meeting(x,y-2,obj_guard)&&!place_meeting(x,y-2,obj_block)){
 	y-=2;
 	}
 	else{
 		timer = 0;
 	}
+	
+	if(x%32==0&&y%32==0){
+		var goox1 = round(x/8)*8 - 64;
+		var gooy1 = round(y/8)*8 - 64;
+		var goox2 = round(x/8)*8 - 32;
+		var gooy2 = round(y/8)*8 - 32;
+		var goox3 = round(x/8)*8;
+		var gooy3 = round(y/8)*8;
+		var goox4 = round(x/8)*8 + 32;
+		var gooy4 = round(y/8)*8 + 32;
+		for(i = 1; i<=4; i++){
+			if(i==1)
+				gx = goox1;
+			if(i==2)
+				gx = goox2;
+			if(i==3)
+				gx = goox3;
+			if(i==4)
+				gx = goox4;
+			for(j = 1; j<=4; j++){
+				if(j==1)
+					gy = gooy1;
+				if(j==2)
+					gy = gooy2;
+				if(j==3)
+					gy = gooy3;
+				if(j==4)
+					gy = gooy4;
+				
+				
+				if(random_range(1,8)>5.5){
+					instance_create_depth(gx,gy,190,obj_goo);
+				}
+			}
+		}
+	}
 }
-if(timer>0){
-	//timer--;
+if(timer==-19){
+	//obj_girl.snailmoved = false;
+}
+if(timer<0&&timer>-20){
+	timer--;
 }
 if(timer==0){
 	timer = -15;

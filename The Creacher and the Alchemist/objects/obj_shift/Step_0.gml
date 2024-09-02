@@ -332,7 +332,7 @@ if(realshift_timer>0){
 if(realshift_timer==0){
 	realshift_timer = -15;
 }
-if(resetti||keyboard_check_pressed(ord("R")))&&room!=rm_title&&room!=rm_end&&room!=rm_intro&&image_index==0{
+if(resetti||keyboard_check_pressed(ord("R")))&&room!=rm_title&&room!=rm_end&&room!=rm_intro&&image_index==0&&obj_girl.visible&&!obj_returnbutton.visible{
 	resetti = false;
 	if(image_speed==0){
 	nexttarget = room;

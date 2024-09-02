@@ -23,9 +23,14 @@ if(myguard.facing=="left"){
 	depth = myguard.depth-1;
 }
 
-if(!obj_shift.resetti&&instance_exists(obj_girl)&&place_meeting(x,y,obj_girl)&&obj_girl.visible){
+if(!obj_shift.resetti&&instance_exists(obj_girl)&&place_meeting(x,y,obj_girl)&&obj_girl.visible&&!myguard.pushable){
 	if(obj_girl.sprite_index==spr_girl_transform&&obj_shift.image_speed==0){
+	if(myguard.facing=="right"||myguard.facing=="left")&&(abs(obj_girl.y-myguard.y)<128){
 	obj_shift.resetti = true;
+	}
+	if(myguard.facing=="up"||myguard.facing=="down")&&(abs(obj_girl.x-myguard.x)<128){
+	obj_shift.resetti = true;
+	}
 	}
 	if(obj_girl.canmove){
 		obj_shift.resetti = true;

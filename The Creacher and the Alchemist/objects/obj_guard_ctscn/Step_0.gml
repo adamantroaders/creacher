@@ -113,7 +113,7 @@ if(obj_girl_ctscn2.sprite_index = spr_girl_attack&&obj_girl_ctscn2.image_index =
 	obj_girl_ctscn2.image_index = 1.8;
 	obj_girl_ctscn2.image_speed = 0;
 	obj_girl_ctscn2.donewalking = 550;
-	audio_play_sound(mus_sad_quietest,1,0,0.2);
+	audio_play_sound(mus_sad_quietest,1,0,0.4);
 	obj_songysong.playing = mus_sad_quietest;
 	obj_songysong.current_bgm = mus_sad_quietest;
 }
@@ -199,6 +199,8 @@ if(dw==149){
 		obj_creacher_ctscn2.y_spd = 0;
 		obj_creacher_ctscn2.x_spd = 0;
 		obj_girl_ctscn2.donewalking = 149;
+		obj_girl_ctscn2.sprite_index = spr_girl_walkleft;
+		obj_girl_ctscn2.image_index = 1.8;
 	}
 }
 
@@ -209,11 +211,13 @@ if(dw==148){
 		obj_creacher_ctscn2.y_spd = 0;
 		obj_creacher_ctscn2.x_spd = 0;
 		obj_girl_ctscn2.donewalking = 148;
+		obj_girl_ctscn2.sprite_index = spr_girl_walkup;
+		obj_girl_ctscn2.image_index = 1.8;
 	}
 }
 
 if(dw==147){
-	obj_creacher_ctscn2.y_spd = 4;
+	obj_creacher_ctscn2.y_spd = 8;
 	obj_girl_ctscn2.donewalking = 148;
 	if(obj_creacher_ctscn2.y>=obj_girl_ctscn2.y){
 		obj_creacher_ctscn2.y_spd = 0;

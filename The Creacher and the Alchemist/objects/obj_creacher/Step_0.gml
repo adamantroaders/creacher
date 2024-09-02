@@ -7,7 +7,7 @@ if(y_spd!=0)
 ys = y_spd;
 
 //wall
-if(!sliding&&place_meeting(x+x_spd, y , WALL)&&!(instance_place(x+x_spd, y , WALL).friend&&!instance_place(x+x_spd, y, WALL).pushable)){
+if(!sliding&&place_meeting(x+x_spd, y , WALL)){
 	
     var _pixelCheck = sign(x_spd);
     while (!place_meeting(x + _pixelCheck,y,WALL)){
@@ -26,7 +26,7 @@ if(!sliding&&place_meeting(x+xs,y,obj_guard)&&instance_place(x+xs, y, obj_guard)
     x_spd=0;
 }
 
-if (!sliding&&place_meeting( x , y +y_spd, WALL)&&!(instance_place(x, y + y_spd , WALL).friend&&!instance_place(x, y+y_spd, WALL).pushable)){
+if (!sliding&&place_meeting( x , y +y_spd, WALL)){
     var _pixelCheck = sign(y_spd);
     while (!place_meeting(x , y+_pixelCheck,WALL)&&!place_meeting(x , y+_pixelCheck,obj_guard)){
         y+=_pixelCheck;
@@ -138,25 +138,25 @@ if(sliding){
 	}
 	if(dir=="up"){
 		y-=8;
-		if(place_meeting(x,y-8,WALL)&&!instance_place(x,y-8,WALL).glass)||place_meeting(x,y-8,obj_guard){
+		if(place_meeting(x,y-8,WALL)&&!instance_place(x,y-8,WALL).glass)||(place_meeting(x,y-8,obj_guard)&&instance_place(x,y-8,obj_guard).pushable){
 			slide_timer = 0;
 		}
 	}
 	if(dir=="down"){
 		y+=8;
-		if(place_meeting(x,y+8,WALL)&&!instance_place(x,y+8,WALL).glass)||place_meeting(x,y+8,obj_guard){
+		if(place_meeting(x,y+8,WALL)&&!instance_place(x,y+8,WALL).glass)||(place_meeting(x,y+8,obj_guard)&&instance_place(x,y+8,obj_guard).pushable){
 			slide_timer = 0;
 		}
 	}
 	if(dir=="left"){
 		x-=8;
-		if(place_meeting(x-8,y,WALL)&&!instance_place(x-8,y,WALL).glass)||place_meeting(x-8,y,obj_guard){
+		if(place_meeting(x-8,y,WALL)&&!instance_place(x-8,y,WALL).glass)||(place_meeting(x-8,y,obj_guard)&&instance_place(x-8,y,obj_guard).pushable){
 			slide_timer = 0;
 		}
 	}
 	if(dir=="right"){
 		x+=8;
-		if(place_meeting(x+8,y,WALL)&&!instance_place(x+8,y,WALL).glass)||place_meeting(x+8,y,obj_guard){
+		if(place_meeting(x+8,y,WALL)&&!instance_place(x+8,y,WALL).glass)||(place_meeting(x+8,y,obj_guard)&&instance_place(x+8,y,obj_guard).pushable){
 			slide_timer = 0;
 		}
 	}
@@ -182,7 +182,7 @@ x+=x_spd*x_movespd;
 y+=y_spd*y_movespd;
 
 
-	while(place_meeting(x,y,WALL)&&!instance_place(x, y, WALL).pushable){
+	while(place_meeting(x,y,WALL)){
 		var getouttahere = round(random_range(-1,1));
 		y+=getouttahere;
 		x+=getouttahere;

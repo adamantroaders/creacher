@@ -1,4 +1,4 @@
-if(obj_shift.char=="girl"){
+if(obj_shift.char=="girl"&&sprite_index!=obj_girl_ctscn&&sprite_index!=obj_girl_ctscn0&&sprite_index!=obj_girl_ctscn2){
 x_spd = keyboard_check(ord("D")) - keyboard_check(ord("A"));
 y_spd = keyboard_check(ord("S")) - keyboard_check(ord("W"));
 
@@ -34,7 +34,7 @@ if(fix){
 x+=x_spd*movespd*canmove;
 y+=y_spd*movespd*canmove;
 
-if(keyboard_check(vk_space)&&anim_timer<0){
+if(keyboard_check(vk_space)&&anim_timer<0&&obj_girl.canmove){
 	sprite_index = spr_girl_transform;
 	image_speed = 15;
 	anim_timer = 120//*fps/image_speed;

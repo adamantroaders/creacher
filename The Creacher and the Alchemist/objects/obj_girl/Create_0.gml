@@ -11,3 +11,4 @@ lastx = x;
 lasty = y;
 fix = false;
 finalcutscene = false;
+snailmoved = false;

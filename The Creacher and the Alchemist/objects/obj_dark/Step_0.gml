@@ -43,3 +43,5 @@ else{
 if(obj_shift.pause){
 	visible = true;
 }
+
+depth = -999;
